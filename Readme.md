@@ -52,26 +52,18 @@ On the Pi 4, the data from these deivces is written to the /sensor filesystem. O
 My /sensor filesystem looks like:
 
 ```
-total 8
-drwxr-xr-x 2 nicci nicci 120 Aug 27 08:32 pi3
-drwxr-xr-x 2 nicci nicci 120 Aug 27 09:17 pi4
--rw-r--r-- 1 nicci nicci  69 Aug 27 09:17 temp-pi3.json
--rw-r--r-- 1 nicci nicci 107 Aug 27 09:17 temp-pi4.json
-
-./pi3:
-total 16
--rw-r--r-- 1 nicci nicci  6 Aug 27 09:17 humidity
--rw-r--r-- 1 nicci nicci  5 Aug 27 09:17 temp
--rw-r--r-- 1 nicci nicci  6 Aug 27 09:17 tempc
--rw-r--r-- 1 nicci nicci 11 Aug 27 09:17 time
-
-./pi4:
-total 16
--rw-r--r-- 1 nicci nicci 18 Aug 27 09:17 humidity
--rw-r--r-- 1 nicci nicci 18 Aug 27 09:17 temp
--rw-r--r-- 1 nicci nicci 19 Aug 27 09:17 tempc
--rw-r--r-- 1 nicci nicci 11 Aug 27 09:17 time
-
+├── pi3
+│   ├── humidity
+│   ├── temp
+│   ├── tempc
+│   └── time
+├── pi4
+│   ├── humidity
+│   ├── temp
+│   ├── tempc
+│   └── time
+├── temp-pi3.json
+└── temp-pi4.json
 ```
 
 ### Sample Files
