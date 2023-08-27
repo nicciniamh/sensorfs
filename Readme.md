@@ -42,7 +42,7 @@ The collector I am running collects data in JSON format. The data then gets writ
 The temp,tempc,humidity files contain the values, time comes from the sender or sensor at the time the reading was made. 
 
 ### Example
-In my home I have an old Raspberry Pi 3B which has been reading the living room temperature for six years. (go little Pi!) and I have a Raspberry Pi 4b+ which I've been obsessing on :) 
+In my home I have an old Raspberry Pi 3B which has been reading the living room temperature for six years. (go little Pi!). I also have a Raspberry Pi 4b+ which is my hub to collect data.
 
 I will, sometime soon, add an esp32 device with a sensor for yet another part of the house. 
 
