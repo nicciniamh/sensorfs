@@ -38,8 +38,9 @@ The collector I am running collects data in JSON format. The data then gets writ
 /sensor/system/tempc
 /sensor/system/humidity
 /sensor/system/time
+/sensor/system/tempdata.json
 ```
-The temp,tempc,humidity files contain the values, time comes from the sender or sensor at the time the reading was made. 
+The temp,tempc,humidity files contain the values, time comes from the sender or sensor at the time the reading was made, tempdata.json contains the json object the other files are derived from. 
 
 ### Example
 In my home I have an old Raspberry Pi 3B which has been reading the living room temperature for six years. (go little Pi!). I also have a Raspberry Pi 4b+ which is my hub to collect data.
@@ -52,18 +53,21 @@ On the Pi 4, the data from these deivces is written to the /sensor filesystem. O
 My /sensor filesystem looks like:
 
 ```
+/sensor/
 ├── pi3
 │   ├── humidity
 │   ├── temp
 │   ├── tempc
+│   ├── tempdata.json
 │   └── time
-├── pi4
-│   ├── humidity
-│   ├── temp
-│   ├── tempc
-│   └── time
-├── temp-pi3.json
-└── temp-pi4.json
+└── pi4
+    ├── humidity
+    ├── temp
+    ├── tempc
+    ├── tempdata.json
+    └── time
+
+2 directories, 10 files
 ```
 
 ### Sample Files
