@@ -14,7 +14,4 @@ if __name__ == "__main__":
 		data['temp'] = data['tempf']
 		del(data['tempf'])
 		dataToFs('/sensor',host,data)
-		data['time'] = int(time.time())
-		with open(f'/sensor/{host}/tempdata.json','w') as f:
-			json.dump(data,f)
 		time.sleep(1) ## Don't read too quickly

@@ -27,6 +27,12 @@ Collectors can be subscribers to MQTT brokers and write remote sensor data to th
 
 Some sensors are not very friendly about being acccessed at the same time and timing can be an issue. In this arrangement multiple applications can read this data without disturbing the hardware. 
 
+## Sensor FS Organization
+To accomodate sharing sensor data with other hosts, each host, including the local host, a path on the root. Sensor data will be written to a class directory which contains the items for that sensor. The format is 
+> /sensor/host/class/item(s)
+
+### Use Case
+
 Consider a collector receives a message with the following json data
 ```
 {"temp": 74.18, "tempc": 23.43, "humidity": 65.07, "time": 1693112929}
@@ -34,40 +40,46 @@ Consider a collector receives a message with the following json data
 The collector I am running collects data in JSON format. The data then gets written to: 
 
 ```
-/sensor/system/temp
-/sensor/system/tempc
-/sensor/system/humidity
-/sensor/system/time
-/sensor/system/tempdata.json
+/sensor/system/tempdata/module
+/sensor/system/tempdata/temp
+/sensor/system/tempdata/tempc
+/sensor/system/tempdata/humidity
+/sensor/system/tempdata/time
+/sensor/system//tempdata/tempdata.json
 ```
 The temp,tempc,humidity files contain the values, time comes from the sender or sensor at the time the reading was made, tempdata.json contains the json object the other files are derived from. 
 
-### Example
-In my home I have an old Raspberry Pi 3B which has been reading the living room temperature for six years. (go little Pi!). I also have a Raspberry Pi 4b+ which is my hub to collect data.
-
-I will, sometime soon, add an esp32 device with a sensor for yet another part of the house. 
+### Running Example
+Currently, I have two Raspberry Pi devices. One, a Pi 3B+ and the hub, a Pi 4B+. Each have a Silicon Labs Si7021 sensor on I2C bus 1. 
 
 Each of these devices publish messges with their data to a [MQTT](https://mqtt.org) broker. 
 
-On the Pi 4, the data from these deivces is written to the /sensor filesystem. On each message the appropriate file is rewritten.
+On the Pi 4, the data local sensor data is written to /sensor/pi4/tempdata
+while a collector that listens to the MQTT messages write the remote data 
+from pi3 and stores it in /sensor/pi3/tempdata. Since each device uses the same interface to collect the actual sensor data their data folers all contain the same elements, albeit, with different data.
+
 My /sensor filesystem looks like:
 
 ```
 /sensor/
 ├── pi3
-│   ├── humidity
-│   ├── temp
-│   ├── tempc
-│   ├── tempdata.json
-│   └── time
+│   └── tempdata
+│       ├── humidity
+│       ├── modinfo
+│       ├── temp
+│       ├── tempc
+│       ├── tempdata.json
+│       └── time
 └── pi4
-    ├── humidity
-    ├── temp
-    ├── tempc
-    ├── tempdata.json
-    └── time
-
-2 directories, 10 files
+    └── tempdata
+        ├── humidity
+        ├── modinfo
+        ├── temp
+        ├── tempc
+        ├── tempdata.json
+        └── time
+        
+        
 ```
 
 ### Sample Files
