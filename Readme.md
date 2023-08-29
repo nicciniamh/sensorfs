@@ -3,6 +3,9 @@
 ## Abstract
 Having a filesystem entity for sensor data fits with the Unix philosopy of "everythng is a file". This document intends to describe a system of doing this that is fairly portable across Unix-like systems. 
 
+### Sensors
+There are far too many sensors to try to describe here, so, except where I need to be specific, I will try to speak generally. Sensors are hardware and can be interfaced in many ways. The goal of this framework will be to describe a general overview. 
+
 ### Targeting the Application
 Since this lays out a simple framework, it does not get into the details of the underlying hardware. Formatting the data is the responsibility of the sensor collector and the application which is using this data. 
 
@@ -16,16 +19,37 @@ tmpfs /sensor	tmpfs nosuid,noexec,nodev,noatime,uid=1000,gid=1000,size=5M 0 0
 
 This creates a 5M ramdisk with my uid/gid as owner.
 
+## Limitations
+Often sensors are used for controlling other devices and need a fine degree of timing. In cases like this it's likely better to work with the physical device. 
+
+This framework is more about data presentation than acquisition.
 
 ## Collectors
 Collectors are programs which collect sensor data from hardware and write to the sensor filesystem.
 
 Collectors can also read files on that filesystem, use of the modification time can represent new data for example. That data can be used to control a device. 
 
+```
+#Example collector:
+	while True:
+		s = sensi7020-iio.sensor('si7021')
+		sensorfs.dataToFs(s.read())
+		time.sleep(1)
+```
+
 **Collectors are not limited to hardware**
 Collectors can be subscribers to MQTT brokers and write remote sensor data to the sensor filesystem.
 
-Some sensors are not very friendly about being acccessed at the same time and timing can be an issue. In this arrangement multiple applications can read this data without disturbing the hardware. 
+```
+# MQTT Data to sensorfs
+while True:
+	getMqttMessage('pi3/tempdata')
+	sensorfs.dataToFs(data)
+	time.sleep(1)
+```
+
+**Collectors can perform write operations.**
+An exampe would be for a collector to make a fifo and wait for input. This input could be passed along to the hardware. This could be extended to work using MQTT (or other machine to machine mechanism) 
 
 ## Sensor FS Organization
 To accomodate sharing sensor data with other hosts, each host, including the local host, a path on the root. Sensor data will be written to a class directory which contains the items for that sensor. The format is 
