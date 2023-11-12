@@ -166,7 +166,7 @@ These sensor data my be transmitted to other devices or hosts using, for example
 
 ## RESTful API Server
 
-For a client-driven approach, I use a [RESTful API server](assets/restapi.py) which returns [JSON](assets/responsejson.md) objects for use in, for example, web applications. 
+For a client-driven approach, I use a [RESTful API server](assets/rest.py) which returns [JSON](assets/responsejson.md) objects for use in, for example, web applications. 
 
 Sensor data may be read via a REST server. In this case I use Flask behind Apache mod-wsgi. 
 The organization of sensors is based on host->sensor name. 
@@ -259,10 +259,11 @@ This makes client code much simpler and less error prone.
 * [response.json](responsejson.md) - response.json
 * [runtemphist.sh](runtemphist.sh) - runtemphist.sh
 * [schema.sql](schema.sql) - schema.sql
-* [sen2fs.py](sen2fs.md) - Export a dict by property to sensorFS
+* [sen2fs.py](sen2fs.md) - Export a dict by property to path
 * [sencollect.py](sencollect.py) - Example Collector
 * [sensor.py](sensor.py) - Base class for Sensors
 
 ### Notes on Environment
 This was built on a Raspberry Pi4+ B running *Raspbian Buster*, *Sqlite3 3.34.1*, and *Python 3.9*. These documents were build using *pygrip*, *MacDown Markdown Editor*, and *draw.io diagram editor*. 
 
+   
