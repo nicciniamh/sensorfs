@@ -205,6 +205,7 @@ For a pi3 or pi4 the data that is returned looks like:
 
 #### Figure 1
 Screenshot of Dashboard App
+
 ![](assets/dashboard.png)
 
 ## Storage, Extraction and Presenting Temperature History 
@@ -220,6 +221,8 @@ Each table has a similar structure. The difference is the temphist_pi4 data beca
 
 #### Figure 2
 Database Tables
+
+
 ![](assets/tables.png)
 
 As part of the database schema views are used to pull all three data sources into one virtual table which is then easy to select. 
