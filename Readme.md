@@ -177,11 +177,11 @@ API usage is made with a HTTP request with the form of
 The return value may be parsed as JSON to get native types. 
 
 |command|Description|Parametera|Return type|
-|---|---|---|---|
-|hosts|List of hosts whose data is available.|None|array|
-|list|List sensors for a specific host.|host|array|
-|read|Read a sensor|host, sensor|JSON object|
-|write|Write to a sensor|host, sensor, data|JSON object|
+|------|---------------------------------------|------------------|-----------|
+|hosts |List of hosts whose data is available. |None              |array.     |
+|list  |List sensors for a specific host.      |host.             |array.     |
+|read  |Read a sensor                          |host, sensor.     |JSON object|
+|write |Write to a sensor                      |host, sensor, data|JSON object|
 
 
 Using this lightweight server I am able to construct web pages or applications. For example, 
