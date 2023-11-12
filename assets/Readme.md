@@ -11,6 +11,7 @@
 |[runtemphist.sh](runtemphist.sh)|BASH script to generate graphs and put things where I want 'em|
 |[schema.sql](schema.sql)|Sqlite3 tables schema |
 |[sen2fs.py](sen2fs.md)|Export a dict by property to path|
+|[senfs.py](senfs.md)|Export data to /sensor fs
 |[sencollect.py](sencollect.py)|Example Collector|
 |[collectconf.py](collectconf.py)|Collector configuration|
 |[sensor.py](sensor.py)|Base class for Sensors|
