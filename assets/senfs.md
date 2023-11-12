@@ -1,4 +1,4 @@
-# Export dictionary to /sensor/*<host>/<sensortype>/<members>*
+# Export dictionary to /sensor/*host/sensortype/members*
 
 ```python
 import os
