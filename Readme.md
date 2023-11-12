@@ -209,6 +209,7 @@ Screenshot of Dashboard App
 ![](assets/dashboard.png)
 
 <a name="#storage">
+
 ## Storage, Extraction and Presenting Temperature History 
 
 <small>(and other stupid SQL tricks)</small>
