@@ -208,9 +208,7 @@ Screenshot of Dashboard App
 
 ![](assets/dashboard.png)
 
-<a name="#storage">
-
-## Storage, Extraction and Presenting Temperature History 
+## Storage Extraction and Presenting Temperature History 
 
 <small>(and other stupid SQL tricks)</small>
 
@@ -299,7 +297,7 @@ Example history graph
 * [Storage Organization](#Storage-Organization)
 * [Remote Usage](#Remote-Usage)
 * [RESTful API Server](#RESTful-API-Server)
-* [Storage, Extraction and Presenting Temperature History](#storage)
+* [Storage, Extraction and Presenting Temperature History](#Storage-Extraction-and-Presenting-Temperature-History)
 * [Description](#Description)
 * [Data Organizaion](#Data-Organizaion)
 * [Code Assets](#Code-Assets)
