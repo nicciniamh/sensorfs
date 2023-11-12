@@ -275,3 +275,16 @@ This makes client code much simpler and less error prone.
 ### Notes on Environment
 This was built on a Raspberry Pi4+ B running *Raspbian Buster*, *Sqlite3 3.34.1*, and *Python 3.9*. These documents were build using *pygrip*, *MacDown Markdown Editor*, and *draw.io diagram editor*. 
 
+## Trademark, Copyright and other Ownership
+
+This document, images and other content are Copyright &copy; 2023 Nicole Stevens. Except where otherwise noted. 
+
+* Raspbian and Raspberry Pi is a trademark of [Raspberry Pi Ltd.](https://raspberrypi.com)
+* [SQLite3](https://www.sqlite.org/copyright.html) is public domain. 
+* Python is Copyright &copy; 2001-2023. [Python Software Foundation.](http://www.python.org)
+* pygrip is Copyright &copy; 2014-2022 Joe Esposito <joe@joeyespo.com>
+* macdown is Copyright &copy; 2014–2016 Tzu-ping Chung.
+* draw.io is &copy; 2005-2023 JGraph Ltd.
+* Linux is a trademark by the [Linux Foundation.](https://www.linuxfoundation.org)
+* UNIX is a trademark of [The Open Group](https://unix.org/trademark.html)
+* JSON is defined by [EMCA](https://ecma-international.org/publications-and-standards/standards/ecma-404/)
