@@ -43,7 +43,7 @@ class sensor(sensor.Sensor):
 		self.data = {
 			'description': 'Sensor Aggregation: bmp/aht temperature',
 			'modinfo': 'com.ducksfeet.aggregate v0.1',
-			'time': int(time.time()),
+			'time': bmpdata['time'],
 			'temp': avgtemp,
 			'pressure': bmpdata['pressure'],
 			'humidity': ahtdata['humidity'],
