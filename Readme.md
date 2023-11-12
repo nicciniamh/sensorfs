@@ -208,6 +208,7 @@ Screenshot of Dashboard App
 
 ![](assets/dashboard.png)
 
+<a name="#storage">
 ## Storage, Extraction and Presenting Temperature History 
 
 <small>(and other stupid SQL tricks)</small>
@@ -283,6 +284,25 @@ Example history graph
 * [sensor.py](assets/sensor.py) - Base class for Sensors
 
 
+#### Index
+* [Abstract](#Abstract)
+* [Audience](#Audience)
+* [Terms used](#Terms-used)
+* [Sensors](#Sensors)
+* [Sensor types](#Sensor-types)
+* [Data Collection and Export](#Data-Collection-and-Export)
+* [Storing Sensor Data on Filesystems](#Storing-Sensor-Data-on-Filesystems)
+* [Limitations](#Limitations)
+* [Collectors](#Collectors)
+* [Virtual Sensors](#Virtual-Sensors)
+* [Storage Organization](#Storage-Organization)
+* [Remote Usage](#Remote-Usage)
+* [RESTful API Server](#RESTful-API-Server)
+* [Storage, Extraction and Presenting Temperature History](#storage)
+* [Description](#Description)
+* [Data Organizaion](#Data-Organizaion)
+* [Code Assets](#Code-Assets)
+
 #### Figures
 
 * [Screenshot of Dashboard App](#Figure-1)
@@ -295,7 +315,7 @@ Example history graph
 ### Notes on Environment
 This was built on a Raspberry Pi4+ B running *Raspbian Buster*, *Sqlite3 3.34.1*, and *Python 3.9*. These documents were build using *pygrip*, *MacDown Markdown Editor*, and *draw.io diagram editor*. 
 
-## Trademark, Copyright and other Ownership
+## Trademarks, Copyrights and other Ownerships
 
 This document, images and other content are Copyright &copy; 2023 Nicole Stevens. Except where otherwise noted. This document is licensed under [CC-BY (Creative Commons)](License.txt). 
 
