@@ -1,7 +1,7 @@
 # Example of Virtual Sensor combinding values from two sensors and averaging common data.
 
-This is an example of a virtual sensor with two sensors aggregated.
-Values from two sensors are amalgamated to one logical sensor. 
+This is an example of a virtual sensor with two sensors' readings combined into one dataset, 
+as a new sensor. 
 
 In this case, I have a HiLetgo AHT20/BMP280 combination sensor.
 It shows on the I2C bus as two separate devices yet it is in one package. The difference between the sensors can be seen in the table below.
