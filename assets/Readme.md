@@ -4,7 +4,7 @@
 |[aggsens.md](aggsens.md)|Example of Virtual Sensor combinding values from two sensors and averaging common data|
 |[generate.sh](generate.sh)|generate.sh|
 |[histcollect.py](histcollect.py)|History Collection Script|
-|[histread.pt](histread.pt)|Read history tables and generate graphs. |
+|[histread.py](histread.py)|Read history tables and generate graphs. |
 |[i2cdev.md](i2cdev.md)| Example of hardware sensors accessed through Linux sysfs|
 |[responsejson.md](responsejson.md)|response.json|
 |[restapi.py](restapi.py)|REST API Server|
