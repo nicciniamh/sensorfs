@@ -282,10 +282,10 @@ Example history graph
 
 #### Figures
 
-* [Screenshot of Dashboard App](#Figure_1)
-* [Database Tables](#Figure_2)
-* [View Relationships](#Figure_3)
-* [Example history graph](#Figure_4)
+* [Screenshot of Dashboard App](#Figure-1)
+* [Database Tables](#Figure-2)
+* [View Relationships](#Figure-3)
+* [Example history graph](#Figure-4)
 
 
 
