@@ -2,7 +2,7 @@
 
 ## Abstract
 
-Modern SOC systems such as Raspberry Pi run Linux and other Unix-like Operating systems. This allows for flexible hardware and software configuration to perform a variety of tasks.
+Modern SOC systems such as Raspberry Pi run Linux and other Unix-like Operating systems. This allows for flexible hardware and software configuration to perform a variety of tasks including management and control of devices through the use of sensors. 
 
 Having a filesystem entity for sensor data fits with the Unix philosophy of "everything is a file". This document intends to describe a system of doing this that is fairly portable across Unix-like systems.
 
