@@ -251,17 +251,17 @@ This makes client code much simpler and less error prone.
 
 ## Code Assets
 
-* [aggsens.py](aggsens.md) - Example of Virtual Sensor combinding values from two sensors and averaging common data
-* [generate.sh](generate.sh) - generate.sh
-* [histcollect.py](histcollect.py) - histcollect
-* [histread.py](histread.py) - histread.py
-* [i2cdev.py](i2cdev.md) -  Example of hardware sensors accessed through Linux sysfs
-* [response.json](responsejson.md) - response.json
-* [runtemphist.sh](runtemphist.sh) - runtemphist.sh
-* [schema.sql](schema.sql) - schema.sql
-* [sen2fs.py](sen2fs.md) - Export a dict by property to path
-* [sencollect.py](sencollect.py) - Example Collector
-* [sensor.py](sensor.py) - Base class for Sensors
+* [aggsens.py](assets/aggsens.md) - Example of Virtual Sensor combinding values from two sensors and averaging common data
+* [generate.sh](assets/generate.sh) - generate.sh
+* [histcollect.py](assets/histcollect.py) - histcollect
+* [histread.py](assets/histread.py) - histread.py
+* [i2cdev.py](assets/i2cdev.md) -  Example of hardware sensors accessed through Linux sysfs
+* [response.json](assets/responsejson.md) - response.json
+* [runtemphist.sh](assets/runtemphist.sh) - runtemphist.sh
+* [schema.sql](assets/schema.sql) - schema.sql
+* [sen2fs.py](assets/sen2fs.md) - Export a dict by property to path
+* [sencollect.py](assets/sencollect.py) - Example Collector
+* [sensor.py](assets/sensor.py) - Base class for Sensors
 
 ### Notes on Environment
 This was built on a Raspberry Pi4+ B running *Raspbian Buster*, *Sqlite3 3.34.1*, and *Python 3.9*. These documents were build using *pygrip*, *MacDown Markdown Editor*, and *draw.io diagram editor*. 
