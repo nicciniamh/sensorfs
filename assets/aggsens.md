@@ -11,7 +11,7 @@ It shows on the I2C bus as two separate devices yet it is in one package. The di
 |AHT20 |      ✓    |   ✓    |    x    |
 |BMP280|      ✓    |   x    |    ✓    |
 
-To treat this as a single unit, the two temperatures and averaged. The humidity and pressure 
+To treat this as a single unit, the two temperatures are averaged, humidity and pressure 
 readings are copyied, and the time is recorded in the return data.
 
 Visually, this is our aggregate sensor.
