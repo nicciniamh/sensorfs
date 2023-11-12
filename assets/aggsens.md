@@ -1,6 +1,9 @@
 # Example of Virtual Sensor combinding values from two sensors and averaging common data.
 
-This is an example of a virtual sensor with two sensors aggregated. Values from two sensors are amalgamated to one logical sensor. In this case, I have a HiLetgo AHT20/BMP280 combination sensor.
+This is an example of a virtual sensor with two sensors aggregated.
+Values from two sensors are amalgamated to one logical sensor. 
+
+In this case, I have a HiLetgo AHT20/BMP280 combination sensor.
 It shows on the I2C bus as two separate devices yet it is in one package. The difference between the sensors can be seen in the table below.
 
 |Sensor|Temperature|Humidity|Barometer|
@@ -8,7 +11,8 @@ It shows on the I2C bus as two separate devices yet it is in one package. The di
 |AHT20 |      ✓    |   ✓    |    x    |
 |BMP280|      ✓    |   x    |    ✓    |
 
-To treat this as a single unit, the two temperatures and averaged. The humidity and pressure reeadings are copyied, and the time is recorded in the return data.
+To treat this as a single unit, the two temperatures and averaged. The humidity and pressure 
+readings are copyied, and the time is recorded in the return data.
 
 Visually, this is our aggregate sensor.
 
