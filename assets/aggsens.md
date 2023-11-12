@@ -49,10 +49,7 @@ class sensor(sensor.Sensor):
 		}
 		return self.data
 
-class aggregate(sensor):
-	pass
-
 if __name__ == "__main__":
-	s = aggregate()
+	s = sensor()
 	print(s.read())
 ```
