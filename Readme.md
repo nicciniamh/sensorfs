@@ -60,12 +60,12 @@ The default on a Raspberry Pi is to run from a Micro Secure Digital Card (sd car
 
 Use of small ram disks provide for non-persistent data that does not stress the devices storage. 
 
-To create, on a debian system, a ramdisk owned by the default user, an entry is added to /etc/fstab:
+To create, on a [Debian](https://www.debian.org) system, a ramdisk owned by the default user, an entry is added to /etc/fstab:
 ```
 tmpfs /sensor	tmpfs nosuid,noexec,nodev,noatime,uid=1000,gid=1000,size=5M 0 0
 ```
 
-This creates a 5M ramdisk owned by uid/gid 1000,1000 (the first login user created on debian systems) as owner.
+This creates a 5M ramdisk owned by uid/gid 1000,1000 (the first login user created on [Debian](https://www.debian.org) systems) as owner.
 
 ### Limitations
 Often sensors are used for controlling other devices and need a fine degree of timing. In cases like this it's likely better to work with the physical device. 
@@ -317,14 +317,15 @@ This was built on a Raspberry Pi4+ B running *Raspbian Buster*, *Sqlite3 3.34.1*
 
 ## Trademarks, Copyrights and other Ownerships
 
-This document, images and other content are Copyright &copy; 2023 Nicole Stevens. Except where otherwise noted. This document is licensed under [CC-BY (Creative Commons)](LICENSE). 
+This document, images and other content are Copyright &copy; 2023 Nicole Stevens. Except where otherwise noted. This document is licensed under [CC-BY (Creative Commons)](LICENSE). The country of publication of this document is United States of America.
 
 * Raspbian and Raspberry Pi is a trademark of [Raspberry Pi Ltd.](https://raspberrypi.com)
+* Debian is a registred trademark by [Software in the Public Interest, Inc.](www.debian.org)
 * [SQLite3](https://www.sqlite.org/copyright.html) is public domain. 
 * Python is Copyright &copy; 2001-2023. [Python Software Foundation.](http://www.python.org)
 * pygrip is Copyright &copy; 2014-2022 Joe Esposito <joe@joeyespo.com>
 * macdown is Copyright &copy; 2014–2016 Tzu-ping Chung.
 * draw.io is &copy; 2005-2023 JGraph Ltd.
-* Linux is a trademark by the [Linux Foundation.](https://www.linuxfoundation.org)
-* UNIX is a trademark of [The Open Group](https://unix.org/trademark.html)
+* Linux is a registered trademark by the [Linux Foundation.](https://www.linuxfoundation.org)
+* UNIX is a registered trademark of [The Open Group](https://unix.org/trademark.html)
 * JSON is defined by [EMCA](https://ecma-international.org/publications-and-standards/standards/ecma-404/)
