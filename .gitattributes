@@ -1,3 +1,2 @@
-*md: diff
-assets/*.md: diff
+*.md: text
 
