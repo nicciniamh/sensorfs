@@ -9,36 +9,36 @@ Having a filesystem entity for sensor data fits with the Unix philosophy of "eve
 This scheme intends to discuss a method along with code to export sensor data from any number of sources to a ramdisk in a consistent, structured format. Because this data can come from network sources, this allows for structuring and representing that data. 
 
 ### Audience
-This is intended for people already familiar with coding, sensors, Linux and Raspberry Pi. Familiarity with the Python programming language and [JSON](assets/responsejson.html) is helpful too. 
+This is intended for people already familiar with coding, sensors, Linux and Raspberry Pi. Familiarity with the Python programming language and [JSON](assets/responsejson.md) is helpful too. 
 
 ### Terms used
 
 * SensorFS - A ramdisk filesystem. For consistency purposes we will use /sensor as the mountpoint.
 * Host - A local or remote host, used in examples without a domain name but there is nothing preventing from using fully qualified domain names. 
-* [JSON](assets/responsejson.html) - Javascript Object Notation. A language agnostic and portable method of representing structured data. 
+* [JSON](assets/responsejson.md) - Javascript Object Notation. A language agnostic and portable method of representing structured data. 
 
 
 ## Sensors
 
-For this system I use Python to create interfaces to sensors, virtual sensors, system information and other information that can be read using the same interface. Sensors are derived from a base class of [Sensor](assets/sensor.html) and the data is read and/or written to using [JSON](assets/responsejson.html).
+For this system I use Python to create interfaces to sensors, virtual sensors, system information and other information that can be read using the same interface. Sensors are derived from a base class of [Sensor](assets/sensor.py) and the data is read and/or written to using [JSON](assets/responsejson.md).
 
 ### Sensor types
 
 There can be a variety of sensors to interface with any number of data sources. 
 
-* [Hardware sensors](assets/i2cdev.html) by either directly manipulating hardware or through kernel interfaces.
-* [Virtual sensors](assets/aggsens.html) which can do things like amalgamate other sensor data or perform calculations on one or more sensors to produce new data.
+* [Hardware sensors](assets/i2cdev.md) by either directly manipulating hardware or through kernel interfaces.
+* [Virtual sensors](assets/aggsens.md) which can do things like amalgamate other sensor data or perform calculations on one or more sensors to produce new data.
 * Remote sensors are a type of virtual sensor in that there is no physical device to read and the data is collected elsewhere. 
 * Information sensors can be used, as an example, do download forecasts and alerts from a weather service.
 
 By using a class heirachy sensors can be written to perform a variety tasks. Given a protocol and an interface this system could also control home automation, robotics, and more.
 
-The [code assets](assets/index.html) have details and code about the components I'm using.
+The [code assets](assets/) have details and code about the components I'm using.
 
 
 ### Data Collection and Export
 
-In [sen2fs.py](assets/sen2fs.html) a dictionary is recursed and each key/value pair is 
+In [sen2fs.py](assets/sen2fs.md) a dictionary is recursed and each key/value pair is 
 turned into a number of files in a base path. For a sensor that has temperature, humidity and pressure, called "aggregate" there will be a directory containing
 
 ```
@@ -52,7 +52,7 @@ turned into a number of files in a base path. For a sensor that has temperature,
 └── time
 ```
 
-Each of these files, except aggregate.json are the keys for the [JSON](assets/responsejson.html) object, and each file contains those keys. The [JSON](assets/responsejson.html) file itself may be used to grab the entire dataset or each file may be used to to read single value. 
+Each of these files, except aggregate.json are the keys for the [JSON](assets/responsejson.md) object, and each file contains those keys. The [JSON](assets/responsejson.md) file itself may be used to grab the entire dataset or each file may be used to to read single value. 
 
 ### Storing Sensor Data on Filesystems
 
@@ -75,14 +75,14 @@ This framework is more about data presentation than acquisition.
 ### Collectors
 Collectors are programs which collect sensor data from hardware and write to the sensor filesystem.
 
-[Collectors](assets/sencollect.html) can also read files on that filesystem, use of the modification time can represent new data for example. That data can be used to control a device. 
+[Collectors](assets/sencollect.py) can also read files on that filesystem, use of the modification time can represent new data for example. That data can be used to control a device. 
 
 **Collectors are not limited to hardware.**
 In my setup I have three Raspberry Pi devices each with a temperature sensor of sometype. Each of these devices writes their data to their own sensorfs. The sensor filesystems from two devices are mounted on a master device which can instantiate a sensor using those files. I also have a sensor, for example, that parses Open Weather Map data to provide a "weather sensor". 
 
 ### Virtual Sensors
 
-[Virtual Sensors](assets/aggsens.html) are sensors that take sensor data, massage it and export it to sensorfs. For example, temperature sensors to control HVAC systems. Instead of using a single data point, temperatures can be averaged and represented as a single point. 
+[Virtual Sensors](assets/aggsens.md) are sensors that take sensor data, massage it and export it to sensorfs. For example, temperature sensors to control HVAC systems. Instead of using a single data point, temperatures can be averaged and represented as a single point. 
 
 
 ## Storage Organization
@@ -157,7 +157,7 @@ My /sensor filesystem looks like:
 
 This shows data for all three hosts (pi4, pi4 and piz). Each device runs a collector that talks to the sensor hardware and exports it to SensorFS. 
 
-The entry for pi4, [aggregate](assets/aggsens.html), is a virtual sensor where three temperatures and two humidities are averaged and the barometric readings are all part of the "sensor's" data. 
+The entry for pi4, [aggregate](assets/aggsens.md), is a virtual sensor where three temperatures and two humidities are averaged and the barometric readings are all part of the "sensor's" data. 
 
 These processes take little, in terms of resources, and the network traffic is negligable. But if deployed well, can provide a robust method of data collection and exchange transparent to the higher level application with just a few cases where administrator rights are used. 
 
@@ -166,7 +166,7 @@ These sensor data my be transmitted to other devices or hosts using, for example
 
 ## RESTful API Server
 
-For a client-driven approach, I use a [RESTful API server](assets/rest.html) which returns [JSON](assets/responsejson.html) objects for use in, for example, web applications. 
+For a client-driven approach, I use a [RESTful API server](assets/rest.py) which returns [JSON](assets/responsejson.md) objects for use in, for example, web applications. 
 
 Sensor data may be read via a REST server. In this case I use Flask behind Apache mod-wsgi. 
 The organization of sensors is based on host->sensor name. 
@@ -251,17 +251,17 @@ This makes client code much simpler and less error prone.
 
 ## Code Assets
 
-* [aggsens.py](aggsens.html) - Example of Virtual Sensor combinding values from two sensors and averaging common data
-* [generate.sh](generate.html) - generate.sh
-* [histcollect.py](histcollect.html) - histcollect
-* [histread.py](histread.html) - histread.py
-* [i2cdev.py](i2cdev.html) -  Example of hardware sensors accessed through Linux sysfs
-* [response.json](responsejson.html) - response.json
-* [runtemphist.sh](runtemphist.html) - runtemphist.sh
-* [schema.sql](schema.html) - schema.sql
-* [sen2fs.py](sen2fs.html) - Export a dict by property to sensorFS
-* [sencollect.py](sencollect.html) - Example Collector
-* [sensor.py](sensor.html) - Base class for Sensors
+* [aggsens.py](aggsens.md) - Example of Virtual Sensor combinding values from two sensors and averaging common data
+* [generate.sh](generate.sh) - generate.sh
+* [histcollect.py](histcollect.py) - histcollect
+* [histread.py](histread.py) - histread.py
+* [i2cdev.py](i2cdev.md) -  Example of hardware sensors accessed through Linux sysfs
+* [response.json](responsejson.md) - response.json
+* [runtemphist.sh](runtemphist.sh) - runtemphist.sh
+* [schema.sql](schema.sql) - schema.sql
+* [sen2fs.py](sen2fs.md) - Export a dict by property to sensorFS
+* [sencollect.py](sencollect.py) - Example Collector
+* [sensor.py](sensor.py) - Base class for Sensors
 
 ### Notes on Environment
 This was built on a Raspberry Pi4+ B running *Raspbian Buster*, *Sqlite3 3.34.1*, and *Python 3.9*. These documents were build using *pygrip*, *MacDown Markdown Editor*, and *draw.io diagram editor*. 
