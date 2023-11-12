@@ -4,9 +4,9 @@
 
 Modern SOC systems such as Raspberry Pi run Linux and other Unix-like Operating systems. This allows for flexible hardware and software configuration to perform a variety of tasks including management and control of devices through the use of sensors. 
 
-Having a filesystem entity for sensor data fits with the Unix philosophy of "everything is a file". This document intends to describe a system of doing this that is fairly portable across Unix-like systems.
+Having a filesystem entity for sensor data fits with the Unix philosophy of "everything is a file".  This document intends to describe a system of doing this that is fairly portable across Unix-like systems.
 
-This scheme intends to discuss a method along with code to export sensor data from any number of sources to a ramdisk in a consistent, structured format. Because this data can come from network sources, this allows for structuring and representing that data. 
+This scheme intends to discuss a method along with code to export sensor data from any number of sources to a ramdisk in a consistent, structured format. Because this data can come from network sources, this allows for structuring and representing that data. I'm using Python and [JSON](assets/responsejson.md) to collect and serialize data, however, nothing described is exclusive to these technologies; Any language and data format can be used. The focus is really on storage and transport.
 
 ### Audience
 This is intended for people already familiar with coding, sensors, Linux and Raspberry Pi. Familiarity with the Python programming language and [JSON](assets/responsejson.md) is helpful too. 
@@ -15,7 +15,7 @@ This is intended for people already familiar with coding, sensors, Linux and Ras
 
 * SensorFS - A ramdisk filesystem. For consistency purposes we will use /sensor as the mountpoint.
 * Host - A local or remote host, used in examples without a domain name but there is nothing preventing from using fully qualified domain names. 
-* [JSON](assets/responsejson.md) - Javascript Object Notation. A language agnostic and portable method of representing structured data. 
+* [JSON](assets/responsejson.md) - Javascript Object Notation. A language agnostic and portable method of representing structured data.
 
 
 ## Sensors
