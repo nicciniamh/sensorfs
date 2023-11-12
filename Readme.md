@@ -317,7 +317,7 @@ This was built on a Raspberry Pi4+ B running *Raspbian Buster*, *Sqlite3 3.34.1*
 
 ## Trademarks, Copyrights and other Ownerships
 
-This document, images and other content are Copyright &copy; 2023 Nicole Stevens. Except where otherwise noted. This document is licensed under [CC-BY (Creative Commons)](License.txt). 
+This document, images and other content are Copyright &copy; 2023 Nicole Stevens. Except where otherwise noted. This document is licensed under [CC-BY (Creative Commons)](LICENSE). 
 
 * Raspbian and Raspberry Pi is a trademark of [Raspberry Pi Ltd.](https://raspberrypi.com)
 * [SQLite3](https://www.sqlite.org/copyright.html) is public domain. 
