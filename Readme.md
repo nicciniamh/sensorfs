@@ -184,17 +184,26 @@ The return value may be parsed as JSON to get native types.
 |write|Write to a sensor|host, sensor, data|JSON object|
 
 
-## Examples
+Using this lightweight server I am able to construct web pages or applications. For example, 
+I have a dashboard app I wrote, primarily, in Javascript, that displays a number of sensors on a page per host, covering three Rasperry Pi. On this dashboard app I use information pulled from the Python module, psutil, to get CPU load, usage, per core usage, memory, boot time, and cpu temperature for that particular device. 
 
-Here are a few examples of some of my uses of the data gathered from these sensors.
+For a pi3 or pi4 the data that is returned looks like:
 
-### Dashboard
+```json
+{"usage": 0.3,
+ "boot_time": 760782.46,
+ "loadavg": [0.46, 0.61, 0.61],
+ "cputemp": 41.868,
+ "vmem": 12.0,
+ "modinfo": "cpu_usage:com.ducksfeet:v0.2",
+ "name": "cpu_usage",
+ "core0": 0.0,
+ "core1": 0.0,
+ "core2": 0.0,
+ "core3": 2.6}
+```
 
-I have a dashboard app I wrote, primarily, in Javascript, that displays a number of sensors on a page per host. 
-
-For each sensor, there are two for each host, an environmental sensor and a system information sensor, the app uses the REST API to read the sensors and then draw it usefully on the screen. 
-
-![](dashboard.png)
+![](assets/dashboard.png)
 
 ## Storage, Extraction and Presenting Temperature History 
 
@@ -208,7 +217,7 @@ Each table has a similar structure. The difference is the temphist_pi4 data beca
 ### Data Organizaion
 
 *Fig. 1. Database Tables*
-![](tables.png)
+![](assets/tables.png)
 
 As part of the database schema views are used to pull all three data sources into one virtual table which is then easy to select. 
 
@@ -237,7 +246,7 @@ LEFT JOIN temphist_piz AS c ON a.time = c.time where a.temp is not null and b.te
 Visually it looks like this:
 
 *Fig. 2. View Relationships*
-![](relations.jpg)
+![](assets/relations.jpg)
 
 Now, to get a full history it's a simple as: 
 ```sql
@@ -247,7 +256,7 @@ SELECT * FROM tempHist;
 This makes client code much simpler and less error prone. 
 
 *Fig. 3. Example Chart*
-![](histblack.jpg)
+![](assets/histblack.jpg)
 
 ## Code Assets
 
