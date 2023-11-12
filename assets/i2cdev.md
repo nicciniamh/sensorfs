@@ -207,7 +207,3 @@ if __name__ == "__main__":
 			print(f'Failed to find I2C device at {hex(a)}')
 
 ```
-
----
-
-<small>This page, images and code are Copyright &copy; 2023 [Nicole Stevens](/sensorfs/about.html) All rights reserved.</small>

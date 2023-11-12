@@ -1,19 +1,4 @@
-# Base class for Sensors
-Every sensor in my sensor ecosystem uses this base class. A sensor has a read and write method. 
-Not all sensors are readable or writeable. This is controlled by the constructor for
-subclasses by passing a reader and writer method that deals with the actual job of acquiring sensor data.
-
-This has the ability to create all sorts of sensors.
-* Hardware sensors by either directly manipulating hardware or through kernel interfaces
-* Virtual sensors which can do things like amalgamate other sensor data or perform calculations on one or more sensors to produce new data.
-* Remote sensors where data is read from remote sources such as other devices collecting data or completely foreign sources such as *openweathermap*. 
-* Something I haven't yet thought of. 
-
-Sensors use [JSON](responsejson.html) to both read and write data. 
-
-```python
-
-import time 
+import time
 import json
 import os
 import numpy as np
@@ -75,8 +60,3 @@ class Sensor:
     def isReadable(self):
         ''' Return boolean if sensor is readable '''
         return callable(self._reader)
-```
-
----
-
-<small>This page, images and code are Copyright &copy; 2023 [Nicole Stevens](/sensorfs/about.html) All rights reserved.</small>

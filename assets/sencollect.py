@@ -1,30 +1,3 @@
-# Collector
-
-Collectors are useful background processes which pull data from sensors and export them to the sensor filesystem. This decouples the act of getting the data from any higher level applications. 
-
-Below I show the collector I use on my Pi4. 
-
-A module included, collectconf, contains dictionaries to control what gets read and how often. 
-
-```python
-
-# these are sensorfs based sensors we collect data from
-fssens = {
-        'aggregate':    'sensagg',
-        'weather':      'senweather',
-        "cpu_usage":    "cpuinfo"
-}
-
-# I2c Sensors we watch. These are created by i2cdev using the address
-i2csens = {
-        'aht10':        {'address': 0x38,'name': "aht10"},
-        'bmp280':       {'address' :0x77,'name': "bmp280"},
-}
-``` 
-
-Main collector code. This uses asyncio to keep performance snappy an data collection times relatively even. 
-
-```python
 #!/usr/bin/env python3
 import os
 import sys
@@ -96,8 +69,3 @@ async def main():
 if __name__ == "__main__":
 	if True:
 		asyncio.run(main())
-```
-
----
-
-<small>This page, images and code are Copyright &copy; 2023 [Nicole Stevens](/sensorfs/about.html) All rights reserved.</small>

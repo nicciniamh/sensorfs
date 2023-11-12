@@ -1,6 +1,3 @@
-# schema.sql
-
-```sql
 CREATE TABLE temphist_pi3(
 	'temp' NUMBER NOT NULL,
 	'humidity' NUMBER NOT NULL,
@@ -36,7 +33,3 @@ LEFT JOIN temphist_pi3 AS b ON a.time = b.time
 LEFT JOIN temphist_piz AS c ON a.time = c.time where a.temp is not null and b.temp is not null and c.temp is not null
 /* tempHist(Date,Nicci,Terry,Living) */
 /* tempHist2(time,Nicci,Terry,Living) */
-```
----
-
-<small>This page, images and code are Copyright &copy; 2023 [Nicole Stevens](/sensorfs/about.html) All rights reserved.</small>

@@ -1,11 +1,3 @@
-# histcollect
-
-This script is run once an hour via cron(8). Very simply, it stores data for each
-defined sensor in a database with each table as temphist_<host>. Each of the defined keys
-are used for the column names on the SQL insert. 
-
-
-```python
 #!/usr/bin/env python3
 import os
 import sys
@@ -49,8 +41,3 @@ try:
 
 except Exception as e:
 	print(f'histcollect: exception {e}',file=sys.stderr)
-```
-
----
-
-<small>This page, images and code are Copyright &copy; 2023 [Nicole Stevens](/sensorfs/about.html) All rights reserved.</small>

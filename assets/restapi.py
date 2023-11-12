@@ -1,7 +1,4 @@
-#
-# RestAPI Server
-#
-```python
+#!/usr/bin/env python3
 import requests
 import json
 
@@ -65,4 +62,3 @@ def get_hosts(server):
             #print(f'JSON String: {js}, error: {e}')
             return None
     return r.json()
-```

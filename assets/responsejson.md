@@ -27,7 +27,3 @@ The sensor values
 }
 
 ```
-
----
-
-<small>This page, images and code are Copyright &copy; 2023 [Nicole Stevens](/sensorfs/about.html) All rights reserved.</small>

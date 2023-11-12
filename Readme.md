@@ -266,5 +266,3 @@ This makes client code much simpler and less error prone.
 ### Notes on Environment
 This was built on a Raspberry Pi4+ B running *Raspbian Buster*, *Sqlite3 3.34.1*, and *Python 3.9*. These documents were build using *pygrip*, *MacDown Markdown Editor*, and *draw.io diagram editor*. 
 
----
-<small>This page, images, code and any other content are Copyright &copy; 2023 [Nicole Stevens](about.html) except where otherwise noted.</small>

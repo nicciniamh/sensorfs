@@ -1,19 +1,10 @@
-# histread.py
-
-This nifty little script pulls data in from 
-SQlite as rows with the initial row and column as labels for each axis. The heavy lifting is being done by pandas and matplotlib. 
-
-
-```python
-"""
-select data from sqlite and draw a chart 
-"""
+#!/usr/bin/env python3
 import datetime
 import sqlite3
 import pandas as pd
 from matplotlib import pyplot as plt
 from PIL import Image
-import PIL.ImageOps    
+import PIL.ImageOps
 
 
 def getDataRows(dbfile):

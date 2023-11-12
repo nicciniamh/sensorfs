@@ -63,4 +63,3 @@ def dataToFs(basepath,host,dataclass,data):
 	with open(os.path.join(basepath,f'{dataclass}.json'),'w') as f:
 		json.dump(data,f)
 ```
-<small>This page, images and code are Copyright &copy; 2023 [Nicole Stevens](/sensorfs/about.html) All rights reserved.</small>
