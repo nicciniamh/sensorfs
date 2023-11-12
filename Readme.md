@@ -203,6 +203,8 @@ For a pi3 or pi4 the data that is returned looks like:
  "core3": 2.6}
 ```
 
+#### Figure 1
+Screenshot of Dashboard App
 ![](assets/dashboard.png)
 
 ## Storage, Extraction and Presenting Temperature History 
@@ -216,7 +218,8 @@ Each table has a similar structure. The difference is the temphist_pi4 data beca
 
 ### Data Organizaion
 
-*Fig. 1. Database Tables*
+#### Figure 2
+Database Tables
 ![](assets/tables.png)
 
 As part of the database schema views are used to pull all three data sources into one virtual table which is then easy to select. 
@@ -245,7 +248,9 @@ LEFT JOIN temphist_piz AS c ON a.time = c.time where a.temp is not null and b.te
 
 Visually it looks like this:
 
-*Fig. 2. View Relationships*
+#### Figure 3
+View Relationships
+
 ![](assets/relations.jpg)
 
 Now, to get a full history it's a simple as: 
@@ -255,7 +260,9 @@ SELECT * FROM tempHist;
 
 This makes client code much simpler and less error prone. 
 
-*Fig. 3. Example Chart*
+#### Figure 4
+Example history graph
+
 ![](assets/histblack.jpg)
 
 ## Code Assets
@@ -271,6 +278,16 @@ This makes client code much simpler and less error prone.
 * [sen2fs.py](assets/sen2fs.md) - Export a dict by property to path
 * [sencollect.py](assets/sencollect.py) - Example Collector
 * [sensor.py](assets/sensor.py) - Base class for Sensors
+
+
+#### Figures
+
+* [Screenshot of Dashboard App](#Figure_1)
+* [Database Tables](#Figure_2)
+* [View Relationships](#Figure_3)
+* [Example history graph](#Figure_4)
+
+
 
 ### Notes on Environment
 This was built on a Raspberry Pi4+ B running *Raspbian Buster*, *Sqlite3 3.34.1*, and *Python 3.9*. These documents were build using *pygrip*, *MacDown Markdown Editor*, and *draw.io diagram editor*. 
