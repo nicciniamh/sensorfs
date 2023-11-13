@@ -1,4 +1,4 @@
-# Example of Virtual Sensor combinding values from two sensors and averaging common data.
+# Example of Virtual Sensor combining values from two sensors and averaging common data.
 
 This is an example of a virtual sensor with two sensors' readings combined into one dataset, 
 as a new sensor. 
