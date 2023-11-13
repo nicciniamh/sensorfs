@@ -205,7 +205,7 @@ Screenshot of Dashboard App
 
 ![](assets/dashboard.png)
 
-## Storage Extraction and Presenting Temperature History 
+## Storage, Extraction and Presenting Temperature History 
 
 <small>(and other stupid SQL tricks)</small>
 
@@ -287,7 +287,7 @@ Example history graph
 * [Sensors](#Sensors)
 * [Sensor types](#Sensor-types)
 * [Data Collection and Export](#Data-Collection-and-Export)
-* [Storing Sensor Data on Filesystems](#Storing-Sensor-Data-on-Filesystems)
+* [Storing Sensor Data on Filesystems](#Storing,-Sensor-Data-on-Filesystems)
 * [Limitations](#Limitations)
 * [Collectors](#Collectors)
 * [Virtual Sensors](#Virtual-Sensors)
