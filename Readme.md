@@ -15,8 +15,7 @@ This is intended for people already familiar with coding, sensors, Linux and Ras
 
 * SensorFS - A ramdisk filesystem. For consistency purposes we will use /sensor as the mountpoint.
 * Host - A local or remote host, used in examples without a domain name but there is nothing preventing from using fully qualified domain names. 
-* [JSON](assets/responsejson.md) - Javascript Object Notation. A language agnostic and portable method of representing structured data.
-
+* [JSON](assets/responsejson.md) - Javascript Object Notation. Despite the name. JSON is a language agnostic and portable method of representing structured data.
 
 ## Sensors
 
@@ -34,7 +33,6 @@ There can be a variety of sensors to interface with any number of data sources.
 By using a class heirachy sensors can be written to perform a variety tasks. Given a protocol and an interface this system could also control home automation, robotics, and more.
 
 The [code assets](assets/) have details and code about the components I'm using.
-
 
 ### Data Collection and Export
 
@@ -60,12 +58,12 @@ The default on a Raspberry Pi is to run from a Micro Secure Digital Card (sd car
 
 Use of small ram disks provide for non-persistent data that does not stress the devices storage. 
 
-To create, on a [Debian](https://www.debian.org) system, a ramdisk owned by the default user, an entry is added to /etc/fstab:
+To create, on a Debian system, a ramdisk owned by the default user, an entry is added to /etc/fstab:
 ```
 tmpfs /sensor	tmpfs nosuid,noexec,nodev,noatime,uid=1000,gid=1000,size=5M 0 0
 ```
 
-This creates a 5M ramdisk owned by uid/gid 1000,1000 (the first login user created on [Debian](https://www.debian.org) systems) as owner.
+This creates a 5M ramdisk owned by uid/gid 1000,1000 (the first login user created on Debian systems as owner.
 
 ### Limitations
 Often sensors are used for controlling other devices and need a fine degree of timing. In cases like this it's likely better to work with the physical device. 
@@ -77,7 +75,6 @@ Collectors are programs which collect sensor data from hardware and write to the
 
 [Collectors](assets/sencollect.py) can also read files on that filesystem, use of the modification time can represent new data for example. That data can be used to control a device. 
 
-**Collectors are not limited to hardware.**
 In my setup I have three Raspberry Pi devices each with a temperature sensor of sometype. Each of these devices writes their data to their own sensorfs. The sensor filesystems from two devices are mounted on a master device which can instantiate a sensor using those files. I also have a sensor, for example, that parses Open Weather Map data to provide a "weather sensor". 
 
 ### Virtual Sensors
