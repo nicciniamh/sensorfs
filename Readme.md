@@ -29,6 +29,7 @@ There can be a variety of sensors to interface with any number of data sources.
 * [Virtual sensors](assets/aggsens.md) which can do things like amalgamate other sensor data or perform calculations on one or more sensors to produce new data.
 * Remote sensors are a type of virtual sensor in that there is no physical device to read and the data is collected elsewhere. 
 * Information sensors can be used, as an example, do download forecasts and alerts from a weather service.
+* I/O Sensors where data can be supplied to a device to perform an operation. My example I/O sensor, [rgbsen.py](assets/rgbsen.md), controls an RGB LED. 
 
 By using a class heirachy sensors can be written to perform a variety tasks. Given a protocol and an interface this system could also control home automation, robotics, and more.
 
