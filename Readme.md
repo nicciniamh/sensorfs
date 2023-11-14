@@ -163,7 +163,7 @@ These sensor data my be transmitted to other devices or hosts using, for example
 
 ## RESTful API Server
 
-For a client-driven approach, I use a [RESTful API server](assets/restapy.py) which returns [JSON](assets/responsejson.md) objects for use in, for example, web applications. 
+For a client-driven approach, I use a [RESTful API server](assets/restapi.py) which returns [JSON](assets/responsejson.md) objects for use in, for example, web applications. 
 
 Sensor data may be read via a REST server. In this case I use Flask behind Apache mod-wsgi. 
 The organization of sensors is based on host->sensor name. 
