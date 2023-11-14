@@ -21,7 +21,7 @@ If this sensor is read using, standard sensor interfaces, the return data, in JS
 
 ```json
 
-{"modinfo": "com.ducksfeet:gpio:rgb:v0.1", "description": "PWM RGB LED", "time": 1699952837, "rgb": [42, 0, 042]}
+{"modinfo": "com.ducksfeet:gpio:rgb:v0.1", "description": "PWM RGB LED", "time": 1699952837, "rgb": [42, 0, 42]}
 ```
 
 ```python
