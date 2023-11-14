@@ -6,6 +6,7 @@
 |[histcollect.py](histcollect.py)|History Collection Script|
 |[histread.py](histread.py)|Read history tables and generate graphs. |
 |[i2cdev.md](i2cdev.md)| Example of hardware sensors accessed through Linux sysfs|
+|[rgbsen.py](rgbsen.md)|Example of I/O sensor|
 |[responsejson.md](responsejson.md)|response.json|
 |[restapi.py](restapi.py)|REST API Server|
 |[runtemphist.sh](runtemphist.sh)|BASH script to generate graphs and put things where I want 'em|

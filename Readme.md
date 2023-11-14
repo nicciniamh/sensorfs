@@ -273,6 +273,7 @@ Example history graph
 * [histcollect.py](assets/histcollect.py) - histcollect
 * [histread.py](assets/histread.py) - histread.py
 * [i2cdev.py](assets/i2cdev.md) -  Example of hardware sensors accessed through Linux sysfs
+* [RGB (I/O) Sensor](assets/rgbsen.md) - Example of I/O sensor
 * [response.json](assets/responsejson.md) - response.json
 * [runtemphist.sh](assets/runtemphist.sh) - runtemphist.sh
 * [schema.sql](assets/schema.sql) - schema.sql
