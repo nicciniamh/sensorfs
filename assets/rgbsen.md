@@ -125,9 +125,9 @@ class rgbLED(sensor.Sensor):
 if __name__ == "__main__":
 	def monitor(sen):
 		'''
-		this is a function that runs as a thread to monitor the 
-		named pipe (fifo) and reads JSON data from it. It's then handed off 
-		to super().write() to modify the hardware.
+		in this function we monitor the named pipe (fifo) and
+		a string of comma separated rgb values in decimal intengers
+		from 0-255. It's then handed off to sen.write() to modify the hardware.
 		'''
 		def signalHandler(sig,frame):
 			log(f'Signal {signal.strsignal(sig)} - exiting')
