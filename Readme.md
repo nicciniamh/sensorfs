@@ -1,6 +1,6 @@
 # Collection, Storage and Distribution of Sensor Data for Local and Remote Applications
 
-For [index](#index) see below.
+For [index](#index), see below.
 
 ## Abstract
 
