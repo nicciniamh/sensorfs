@@ -1,4 +1,4 @@
-# Sen2Fs - Export a dict by property to sensorFS
+# dataToFs - Export a dict by property to file system tree
 
 This function explodes a dict into files based on basepath, dataclass and data. So with a dict 
 representing data from an AHT10 sensor on Pi3, storing in the base path of sensor, the call would 

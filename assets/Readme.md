@@ -2,6 +2,7 @@
 |File|Purpose|
 |---|---|
 |[aggsens.md](aggsens.md)|Example of Virtual Sensor combinding values from two sensors and averaging common data|
+|[dataToFs.py](sen2fs.md)|Export a dict by property to path|
 |[generate.sh](generate.sh)|generate.sh|
 |[histcollect.py](histcollect.py)|History Collection Script|
 |[histread.py](histread.py)|Read history tables and generate graphs. |
@@ -11,7 +12,6 @@
 |[restapi.py](restapi.py)|REST API Server|
 |[runtemphist.sh](runtemphist.sh)|BASH script to generate graphs and put things where I want 'em|
 |[schema.sql](schema.sql)|Sqlite3 tables schema |
-|[sen2fs.py](sen2fs.md)|Export a dict by property to path|
 |[senfs.py](senfs.md)|Export data to /sensor fs
 |[sencollect.py](sencollect.py)|Example Collector|
 |[collectconf.py](collectconf.py)|Collector configuration|

@@ -23,7 +23,8 @@ async def collector(sensor,hostname):
 		try:
 			debug(f'Reading {sensor.name}')
 			data = sensor.read()
-			dataToFs('/sensor',hostname,sensor.name,data)
+			path = os.path.join('/sensor',hostname,sensor.name)
+			dataToFs(path,sensor.name,data)
 		except:
 			data = False
 		await asyncio.sleep(1)

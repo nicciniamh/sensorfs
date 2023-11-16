@@ -38,7 +38,7 @@ The [code assets](assets/) have details and code about the components I'm using.
 
 ### Data Collection and Export
 
-In [sen2fs.py](assets/sen2fs.md) a dictionary is recursed and each key/value pair is 
+In [dataToFs.py](assets/dataToFs.md) a dictionary is recursed and each key/value pair is 
 turned into a number of files in a base path. For a sensor that has temperature, humidity and pressure, called "aggregate" there will be a directory containing
 
 ```
@@ -281,7 +281,7 @@ Example history graph
 * [response.json](assets/responsejson.md) - response.json
 * [runtemphist.sh](assets/runtemphist.sh) - runtemphist.sh
 * [schema.sql](assets/schema.sql) - schema.sql
-* [sen2fs.py](assets/sen2fs.md) - Export a dict by property to path
+* [dataToFs.py](assets/dataToFs.md) - Export a dict by property to path
 * [sencollect.py](assets/sencollect.py) - Example Collector
 * [sensor.py](assets/sensor.py) - Base class for Sensors
 
