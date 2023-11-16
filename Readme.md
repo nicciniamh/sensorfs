@@ -1,5 +1,7 @@
 # Collection, Storage and Distribution of Sensor Data for Local and Remote Applications
 
+For [index](#index) see below.
+
 ## Abstract
 
 Modern SOC systems such as Raspberry Pi run Linux and other Unix-like Operating systems. This allows for flexible hardware and software configuration to perform a variety of tasks including management and control of devices through the use of sensors. 
