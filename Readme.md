@@ -267,7 +267,8 @@ This makes client code much simpler and less error prone.
 #### Figure 4
 Example history graph
 
-![](assets/histblack.jpg)
+![](assets/histblack.jpg#gh-dark-mode-only)
+![](assets/histwhite.jpg#gh-light-mode-only)
 
 ## Code Assets
 
