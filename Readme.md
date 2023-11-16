@@ -322,7 +322,7 @@ Example history graph
 
 
 ### Notes on Environment
-This was built on a Raspberry Pi4+ B running *Raspbian Buster*, *Sqlite3 3.34.1*, and *Python 3.9*. These documents were build using *MacDown Markdown Editor*, and *draw.io diagram editor*. 
+This was built on a Raspberry Pi4+ B running *Raspbian Buster*, *Sqlite3 3.34.1*, and *Python 3.9*. These documents were build using Sublime Text, *MacDown Markdown Editor*, and *draw.io diagram editor*. 
 
 ## Trademarks, Copyrights and other Ownerships
 
@@ -332,6 +332,7 @@ This document, images and other content are Copyright &copy; 2023 Nicole Stevens
 * Debian is a registred trademark by [Software in the Public Interest, Inc.](https://www.debian.org)
 * Python is Copyright &copy; 2001-2023. [Python Software Foundation.](http://www.python.org)
 * MacDown is Copyright &copy; 2014–2016 Tzu-ping Chung.
+* Sublime Text is Copyright &copy; [Sublime HQ Pty, Ltd.](https://www.sublimehq.com/)
 * draw.io is &copy; 2005-2023 JGraph Ltd.
 * Linux is a registered trademark  by the [Linux Foundation.](https://www.linuxfoundation.org)
 * UNIX is a registered trademark of [The Open Group](https://unix.org/trademark.html)
