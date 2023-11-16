@@ -165,7 +165,11 @@ These processes take little, in terms of resources, and the network traffic is n
 ## Remote Usage
 These sensor data my be transmitted to other devices or hosts using, for example, MQTT. This broked approach pushes data to the interested client. 
 
-## RESTful API Server
+### MQTT
+Because sensor data is stored, in part, as JSON data, which is also the return format from Sensor derived sensors, it is quite suitable for MQTT. In this case, the data would be published to the broker with a topic 
+of /sensor/host/sensorname and a payload of the JSON from that sensor. For a subscriber, the data can be read, and, in this context, [dataToFs.py](assets/dataToFs.md) would be called to export the data to the filesystem. 
+
+### RESTful API Server
 
 For a client-driven approach, I use a [RESTful API server](assets/restapi.py) which returns [JSON](assets/responsejson.md) objects for use in, for example, web applications. 
 
@@ -301,6 +305,7 @@ Example history graph
 * [Virtual Sensors](#Virtual-Sensors)
 * [Storage Organization](#Storage-Organization)
 * [Remote Usage](#Remote-Usage)
+* [MQTT](#MQTT)
 * [RESTful API Server](#RESTful-API-Server)
 * [Storage, Extraction and Presenting Temperature History](#Storage-Extraction-and-Presenting-Temperature-History)
 * [Description](#Description)
@@ -333,3 +338,5 @@ This document, images and other content are Copyright &copy; 2023 Nicole Stevens
 * Linux is a registered trademark  by the [Linux Foundation.](https://www.linuxfoundation.org)
 * UNIX is a registered trademark of [The Open Group](https://unix.org/trademark.html)
 * JSON is defined by [EMCA](https://ecma-international.org/publications-and-standards/standards/ecma-404/)
+* MQTT overseen by [The Organization for the Advancement of Structured Information Standards ](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=mqtt)
+
