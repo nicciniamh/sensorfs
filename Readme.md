@@ -222,7 +222,8 @@ Each table has a similar structure. The difference is the temphist_pi4 data beca
 Database Tables
 
 
-![](assets/tables.png)
+![](assets/tables.png#gh-dark-mode-only)
+![](assets/tables.png#gh-light-mode-only)
 
 As part of the database schema views are used to pull all three data sources into one virtual table which is then easy to select. 
 
@@ -253,7 +254,8 @@ Visually it looks like this:
 #### Figure 3
 View Relationships
 
-![](assets/relations.jpg)
+![](assets/relations.jpg#gh-dark-mode-only)
+![](assets/relations.jpg#gh-light-mode-only)
 
 Now, to get a full history it's a simple as: 
 ```sql

@@ -15,7 +15,8 @@ To treat this as a single unit, the two temperatures are averaged, humidity, pre
 
 Visually, this is our aggregate sensor.
 
-![](aggregate.png)
+![](aggregate.png#gh-dark-mode-only)
+![](aggregate.png#gh-light-mode-only)
 
 ```python
 #!/usr/bin/env python3
