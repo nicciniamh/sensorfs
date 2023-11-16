@@ -329,7 +329,7 @@ This was built on a Raspberry Pi4+ B running *Raspbian Buster*, *Sqlite3 3.34.1*
 This document, images and other content are Copyright &copy; 2023 Nicole Stevens. Except where otherwise noted. This document is licensed under [CC-BY (Creative Commons)](LICENSE). The country of publication of this document is United States of America.
 
 * Raspbian and Raspberry Pi is a trademark of [Raspberry Pi Ltd.](https://raspberrypi.com)
-* Debian is a registred trademark by [Software in the Public Interest, Inc.](www.debian.org)
+* Debian is a registred trademark by [Software in the Public Interest, Inc.](https://www.debian.org)
 * [SQLite3](https://www.sqlite.org/copyright.html) is public domain. 
 * Python is Copyright &copy; 2001-2023. [Python Software Foundation.](http://www.python.org)
 * PyGrip is Copyright &copy; 2014-2022 Joe Esposito <joe@joeyespo.com>
