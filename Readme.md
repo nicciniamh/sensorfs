@@ -274,6 +274,7 @@ Example history graph
 
 * [aggsens.py](assets/aggsens.md) - Example of Virtual Sensor combinding values from two sensors and averaging common data
 * [generate.sh](assets/generate.sh) - generate.sh
+* [dataToFs.py](assets/dataToFs.md) - Export a dict by property to path
 * [histcollect.py](assets/histcollect.py) - histcollect
 * [histread.py](assets/histread.py) - histread.py
 * [i2cdev.py](assets/i2cdev.md) -  Example of hardware sensors accessed through Linux sysfs
@@ -281,7 +282,6 @@ Example history graph
 * [response.json](assets/responsejson.md) - response.json
 * [runtemphist.sh](assets/runtemphist.sh) - runtemphist.sh
 * [schema.sql](assets/schema.sql) - schema.sql
-* [dataToFs.py](assets/dataToFs.md) - Export a dict by property to path
 * [sencollect.py](assets/sencollect.py) - Example Collector
 * [sensor.py](assets/sensor.py) - Base class for Sensors
 
