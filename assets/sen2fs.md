@@ -1,8 +1,8 @@
 # Sen2Fs - Export a dict by property to sensorFS
 
-This function explodes a dict into files based on basepath, host, dataclass and data. So with a dict 
+This function explodes a dict into files based on basepath, dataclass and data. So with a dict 
 representing data from an AHT10 sensor on Pi3, storing in the base path of sensor, the call would 
-look like ```dataToFs('/sensor','pi3','aht10, data)```. 
+look like ```dataToFs('/sensor/pi3','aht10', data)```. 
 Given the dictionary:
 
 ```
@@ -40,18 +40,20 @@ Time is contains the time the last reading was taken and description and modinfo
 import os
 import json
 
-def dataToFs(basepath,host,dataclass,data):
+def dataToFs(basepath,dataclass,data):
 	'''
 	Recursively create data nodes in sensorfs
-	basepath: e.g, /sensor
-	name: system name, e.g, pi4
+	basepath: e.g, /sensor/pi4
+	dataclass: type of data, e.g., sensor name
 	data: dict of data
-	each element would be in /sensor/host/dataclass/pi4/element
+	each element would be in /basepath/dataclass/element
 	'''
-	basepath = os.path.join(basepath,host,dataclass)
+	os.makedirs(basepath,exist_ok=True)
 	for k,v in data.items():
 		if type(v) is dict:
-			dataToFs(basepath,k,v)
+			dp = os.path.join(basepath,k)
+			os.makedirs(dp,exist_ok=True)
+			dataToFs(dp,k,v)
 		else:
 			fn = os.path.join(basepath,k)
 			with open(fn,'w') as f:
