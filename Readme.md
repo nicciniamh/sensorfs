@@ -29,10 +29,16 @@ For this system I use Python to create interfaces to sensors, virtual sensors, s
 There can be a variety of sensors to interface with any number of data sources. 
 
 * [Hardware sensors](assets/i2cdev.md) by either directly manipulating hardware or through kernel interfaces.
-* [Virtual sensors](assets/aggsens.md) which can do things like amalgamate other sensor data or perform calculations on one or more sensors to produce new data.
+* [Virtual Sensors](#Virtual-Sensors) which can do things like amalgamate other sensor data or perform calculations on one or more sensors to produce new data or represent any set of structured data..
 * Remote sensors are a type of virtual sensor in that there is no physical device to read and the data is collected elsewhere. 
-* Information sensors can be used, as an example, do download forecasts and alerts from a weather service.
 * I/O Sensors where data can be supplied to a device to perform an operation. My example I/O sensor, [rgbsen.py](assets/rgbsen.md), controls an RGB LED. 
+
+#### Virtual Sensors
+Information specific to a system, event, or other package of information can be expressed as "sensor" data. Examples of this are
+
+* In some cases it's valuable to aggregate sensor data as one dataset. An example of this is my [aggregate](assets/aggsens.md) sensor, a virtual sensor which averages two sensors as one.
+* System information, such as cpu load or other system monitoring data can be expressed as a virtual sensor. For eample, [cpuinfo.py](assets/cpuinfo) provides cpu load. This is how my [Dashboard App](#Figure-1) gets the cpu loads. 
+* Data from remote sources such as other sensors, weather, and others.
 
 By using a class heirachy sensors can be written to perform a variety tasks. Given a protocol and an interface this system could also control home automation, robotics, and more.
 
