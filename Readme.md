@@ -37,7 +37,7 @@ There can be a variety of sensors to interface with any number of data sources.
 Information specific to a system, event, or other package of information can be expressed as "sensor" data. Examples of this are
 
 * In some cases it's valuable to aggregate sensor data as one dataset. An example of this is my [aggregate](assets/aggsens.md) sensor, a virtual sensor which averages two sensors as one.
-* System information, such as cpu load or other system monitoring data can be expressed as a virtual sensor. For eample, [cpuinfo.py](assets/cpuinfo) provides cpu load. This is how my [Dashboard App](#Figure-1) gets the cpu loads. 
+* System information, such as cpu load or other system monitoring data can be expressed as a virtual sensor. For eample, [cpuinfo.py](assets/cpuinfo.py) provides cpu load. This is how my [Dashboard App](#Figure-1) gets the cpu loads. 
 * Data from remote sources such as other sensors, weather, and others.
 
 By using a class heirachy sensors can be written to perform a variety tasks. Given a protocol and an interface this system could also control home automation, robotics, and more.
