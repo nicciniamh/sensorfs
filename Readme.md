@@ -254,8 +254,8 @@ Visually it looks like this:
 #### Figure 3
 View Relationships
 
-![](assets/relations-black.jpg#gh-dark-mode-only)
-![](assets/relations-white.jpg#gh-light-mode-only)
+![](assets/relations-black.png#gh-dark-mode-only)
+![](assets/relations-white.png#gh-light-mode-only)
 
 Now, to get a full history it's a simple as: 
 ```sql
