@@ -330,7 +330,6 @@ This document, images and other content are Copyright &copy; 2023 Nicole Stevens
 
 * Raspbian and Raspberry Pi is a trademark of [Raspberry Pi Ltd.](https://raspberrypi.com)
 * Debian is a registred trademark by [Software in the Public Interest, Inc.](https://www.debian.org)
-* [SQLite3](https://www.sqlite.org/copyright.html) is public domain. 
 * Python is Copyright &copy; 2001-2023. [Python Software Foundation.](http://www.python.org)
 * PyGrip is Copyright &copy; 2014-2022 Joe Esposito <joe@joeyespo.com>
 * MacDown is Copyright &copy; 2014–2016 Tzu-ping Chung.
@@ -339,4 +338,5 @@ This document, images and other content are Copyright &copy; 2023 Nicole Stevens
 * UNIX is a registered trademark of [The Open Group](https://unix.org/trademark.html)
 * JSON is defined by [EMCA](https://ecma-international.org/publications-and-standards/standards/ecma-404/)
 * MQTT overseen by [The Organization for the Advancement of Structured Information Standards ](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=mqtt)
+* [SQLite3](https://www.sqlite.org/copyright.html) is public domain. 
 
