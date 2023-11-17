@@ -285,6 +285,7 @@ Example history graph
 ## Code Assets
 
 * [aggsens.py](assets/aggsens.md) - Example of Virtual Sensor combinding values from two sensors and averaging common data
+* [cpuinfo.py](asstes/cpuinfo.py) - A virtual sensor with cpu information from psutil
 * [dataToFs.py](assets/dataToFs.md) - Export a dict by property to path
 * [generate.sh](assets/generate.sh) - generate.sh
 * [histcollect.py](assets/histcollect.py) - histcollect
