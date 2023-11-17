@@ -10,6 +10,10 @@ Having a filesystem entity for sensor data fits with the Unix philosophy of "eve
 
 This scheme intends to discuss a method along with code to export sensor data from any number of sources to a ramdisk in a consistent, structured format. Because this data can come from network sources, this allows for structuring and representing that data. I'm using Python and [JSON](assets/responsejson.md) to collect and serialize data, however, nothing described is exclusive to these technologies; Any language and data format can be used. The focus is really on storage and transport.
 
+#### Why a file system? 
+File system and file system like objects are the most portable way of storing data on a local system. For most applications, this data can be shared using regular file sharing technologies. Using in-memory file systems there is no storage fatigue involved.
+
+
 ### Audience
 This is intended for people already familiar with coding, sensors, Linux and Raspberry Pi. Familiarity with the [Python](https://www.learnpython.org) programming language and [JSON](assets/responsejson.md) is helpful too. Be aware that
 while code is presented, this is not a code respository and some linked files are actually markdown files to better illustrate the code.
