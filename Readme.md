@@ -4,7 +4,7 @@ For [index](#index), see below.
 
 ## Abstract
 
-Modern SOC systems such as Raspberry Pi run Linux and other Unix-like Operating systems. This allows for flexible hardware and software configuration to perform a variety of tasks including management and control of devices through the use of sensors. 
+Modern SOC systems such as Raspberry Pi run Linux and other Unix-like Operating systems. This allows for flexible hardware and software configuration to perform a variety of tasks including management and control of devices through the use of sensors. With devices like Raspberry Pi 4 and Pi 5 the ability to build and scale IoT Gateway Applicaitons becomes a simpler task and with device sensor data unified in a singular format, these applications can decouple themselves from the physical aspect of data collection and device control. 
 
 Having a filesystem entity for sensor data fits with the Unix philosophy of "everything is a file".  This document intends to describe a system of doing this that is fairly portable across Unix-like systems.
 
