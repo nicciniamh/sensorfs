@@ -22,7 +22,7 @@ The background thread is running the function in monitor. The only parameter is 
 | off    | Turn on LEDs by setting RGB to 0,0,0                          | None       |
 | rgb    | Set rgb pins value to value in data                           | rgb triplet|
 | hsl    | set rgb pins value to hsl value in data                       | hsl triplet|
-| rainbow| Turn on color cycling [see below](#Rainbow-Subommands)          | see below  |
+| rainbow| Turn on color cycling [see below](#rainbow-subcommands)          | see below  |
 
 Note that all but the rainbow commands turn off any active color cycling.
 
