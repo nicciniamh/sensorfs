@@ -70,7 +70,7 @@ Each of these files, except aggregate.json are the keys for the [JSON](assets/re
 
 The default on a Raspberry Pi is to run from a Micro Secure Digital Card (sd card) using the mmc interfaces. Frequent writes over time fatigues this media. It is possible to run a Pi using other storage but sensor data is very dynamic and persistency is not as important. 
 
-Use of small ram disks provide for non-persistent data that does not stress the devices storage. 
+The use of small ram disks provide for non-persistent data does not stress the devices storage. 
 
 To create, on a Debian system, a ramdisk owned by the default user, an entry is added to /etc/fstab:
 ```
