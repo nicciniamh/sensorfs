@@ -1,8 +1,20 @@
 # Collection, Storage and Distribution of Sensor Data for Local and Remote Applications
 
+## Abstract
+
+Modern SOC systems such as Raspberry Pi run Linux and other Unix-like Operating systems. This allows for flexible hardware and software configuration to perform a variety of tasks including management and control of devices through the use of sensors. With devices like Raspberry Pi 4 and Pi 5 the ability to build and scale IoT Gateway Applicaitons becomes a simpler task and with device sensor data unified in a singular format, these applications can decouple themselves from the physical aspect of data collection and device control. 
+
+Having a filesystem entity for sensor data fits with the Unix philosophy of "everything is a file".  This document intends to describe a system of doing this that is fairly portable across Unix-like systems.
+
+This scheme intends to discuss a method along with code to export sensor data from any number of sources to a ramdisk in a consistent, structured format. Because this data can come from network sources, this allows for structuring and representing that data. I'm using Python and [JSON](assets/responsejson.md) to collect and serialize data, however, nothing described is exclusive to these technologies; Any language and data format can be used. The focus is really on storage and transport.
+
+#### Why a file system? 
+File system and file system like objects are the most portable way of storing data on a local system. For most applications, this data can be shared using regular file sharing technologies. Using in-memory file systems there is no storage fatigue involved.
+
+
+
 ## Contents
 
-* [Abstract](#Abstract)
 * [Audience](#Audience)
 * [Terms used](#Terms-used)
 * [Sensors](#Sensors)
@@ -21,18 +33,6 @@
 * [Data Organizaion](#Data-Organizaion)
 * [Code Assets](#Code-Assets)
 * [Figure Listing](#figures)
-
-## Abstract
-
-Modern SOC systems such as Raspberry Pi run Linux and other Unix-like Operating systems. This allows for flexible hardware and software configuration to perform a variety of tasks including management and control of devices through the use of sensors. With devices like Raspberry Pi 4 and Pi 5 the ability to build and scale IoT Gateway Applicaitons becomes a simpler task and with device sensor data unified in a singular format, these applications can decouple themselves from the physical aspect of data collection and device control. 
-
-Having a filesystem entity for sensor data fits with the Unix philosophy of "everything is a file".  This document intends to describe a system of doing this that is fairly portable across Unix-like systems.
-
-This scheme intends to discuss a method along with code to export sensor data from any number of sources to a ramdisk in a consistent, structured format. Because this data can come from network sources, this allows for structuring and representing that data. I'm using Python and [JSON](assets/responsejson.md) to collect and serialize data, however, nothing described is exclusive to these technologies; Any language and data format can be used. The focus is really on storage and transport.
-
-#### Why a file system? 
-File system and file system like objects are the most portable way of storing data on a local system. For most applications, this data can be shared using regular file sharing technologies. Using in-memory file systems there is no storage fatigue involved.
-
 
 ### Audience
 This is intended for people already familiar with coding, sensors, Linux and Raspberry Pi. Familiarity with the [Python](https://www.learnpython.org) programming language and [JSON](assets/responsejson.md) is helpful too. Be aware that
