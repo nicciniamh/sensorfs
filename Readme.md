@@ -1,6 +1,26 @@
 # Collection, Storage and Distribution of Sensor Data for Local and Remote Applications
 
-For [index](#index), see below.
+## Contents
+
+* [Abstract](#Abstract)
+* [Audience](#Audience)
+* [Terms used](#Terms-used)
+* [Sensors](#Sensors)
+* [Sensor types](#Sensor-types)
+* [Data Collection and Export](#Data-Collection-and-Export)
+* [Storing Sensor Data on Filesystems](#Storing-Sensor-Data-on-Filesystems)
+* [Limitations](#Limitations)
+* [Collectors](#Collectors)
+* [Virtual Sensors](#Virtual-Sensors)
+* [Storage Organization](#Storage-Organization)
+* [Remote Usage](#Remote-Usage)
+* [MQTT](#MQTT)
+* [RESTful API Server](#RESTful-API-Server)
+* [Storage, Extraction and Presenting Temperature History](#Storage-Extraction-and-Presenting-Temperature-History)
+* [Description](#Description)
+* [Data Organizaion](#Data-Organizaion)
+* [Code Assets](#Code-Assets)
+* [Figure Listing](#figures)
 
 ## Abstract
 
@@ -301,27 +321,6 @@ Example history graph
 * [schema.sql](assets/schema.sql) - schema.sql
 * [sencollect.py](assets/sencollect.py) - Example Collector
 * [sensor.py](assets/sensor.py) - Base class for Sensors
-
-
-#### Index
-* [Abstract](#Abstract)
-* [Audience](#Audience)
-* [Terms used](#Terms-used)
-* [Sensors](#Sensors)
-* [Sensor types](#Sensor-types)
-* [Data Collection and Export](#Data-Collection-and-Export)
-* [Storing Sensor Data on Filesystems](#Storing-Sensor-Data-on-Filesystems)
-* [Limitations](#Limitations)
-* [Collectors](#Collectors)
-* [Virtual Sensors](#Virtual-Sensors)
-* [Storage Organization](#Storage-Organization)
-* [Remote Usage](#Remote-Usage)
-* [MQTT](#MQTT)
-* [RESTful API Server](#RESTful-API-Server)
-* [Storage, Extraction and Presenting Temperature History](#Storage-Extraction-and-Presenting-Temperature-History)
-* [Description](#Description)
-* [Data Organizaion](#Data-Organizaion)
-* [Code Assets](#Code-Assets)
 
 #### Figures
 
