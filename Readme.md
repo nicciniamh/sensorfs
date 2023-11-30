@@ -327,8 +327,8 @@ Example history graph
 Tools used to collect and generate history
   * [Collect temperature history](assets/histcollect.py)
   * [Generate history data and graphs](assets/generate.sh)
-  * [runtemphist.sh - Part of the tool to generate history data](assets/runtemphist.sh)
-  * [histread.sh - Part of the tool to generate history data](assets/histread.py)
+  * [runtemphist.sh - tool to generate history data](assets/runtemphist.sh)
+  * [histread.sh - tool to generate graphs](assets/histread.py)
 
 
 #### Figures
