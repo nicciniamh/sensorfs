@@ -56,6 +56,9 @@ There can be a variety of sensors to interface with any number of data sources.
 * I/O Sensors where data can be supplied to a device to perform an operation. My example I/O sensor, [rgbsen.py](assets/rgbsen.md), controls an RGB LED. 
 
 #### Virtual Sensors
+
+[Virtual Sensors](assets/aggsens.md) are sensors that take sensor data, massage it and export it to sensorfs. For example, temperature sensors to control HVAC systems. Instead of using a single data point, temperatures can be averaged and represented as a single point. 
+
 Information specific to a system, event, or other package of information can be expressed as "sensor" data. Examples of this are
 
 * In some cases it's valuable to aggregate sensor data as one dataset. An example of this is my [aggregate](assets/aggsens.md) sensor, a virtual sensor which averages two sensors as one.
@@ -108,11 +111,6 @@ Collectors are programs which collect sensor data from hardware and write to the
 [Collectors](assets/sencollect.py) can also read files on that filesystem, use of the modification time can represent new data for example. That data can be used to control a device. 
 
 In my setup I have three Raspberry Pi devices each with a temperature sensor of sometype. Each of these devices writes their data to their own sensorfs. The sensor filesystems from two devices are mounted on a master device which can instantiate a sensor using those files. I also have a sensor, for example, that parses Open Weather Map data to provide a "weather sensor". 
-
-### Virtual Sensors
-
-[Virtual Sensors](assets/aggsens.md) are sensors that take sensor data, massage it and export it to sensorfs. For example, temperature sensors to control HVAC systems. Instead of using a single data point, temperatures can be averaged and represented as a single point. 
-
 
 ## Storage Organization
 To accomodate sharing sensor data with other hosts, each host, including the local host, a path on the root. Sensor data will be written to a class directory which contains the items for that sensor. The format is ```/sensor/host/class/item(s)```.
