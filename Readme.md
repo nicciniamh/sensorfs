@@ -106,7 +106,7 @@ To create, on a Debian system, a ramdisk owned by the default user, an entry is 
 tmpfs /sensor	tmpfs nosuid,noexec,nodev,noatime,uid=1000,gid=1000,size=5M 0 0
 ```
 
-This creates a 5M ramdisk owned by uid/gid 1000,1000 (the first login user created on Debian systems as owner.
+This creates a 5M ramdisk owned by uid/gid 1000,1000 (the first login user created on Debian systems as owner. This is our SensorFS.
 
 ### Limitations
 Often sensors are used for controlling other devices and need a fine degree of timing. In cases like this it's likely better to work with the physical device. 
