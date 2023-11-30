@@ -28,7 +28,9 @@
 
 ## Abstract
 
-Modern SOC systems such as Raspberry Pi run Linux and other Unix-like Operating systems. This allows for flexible hardware and software configuration to perform a variety of tasks including management and control of devices through the use of sensors. With devices like Raspberry Pi 4 and Pi 5 the ability to build and scale IoT Gateway Applicaitons becomes a simpler task and with device sensor data unified in a singular format, these applications can decouple themselves from the physical aspect of data collection and device control. 
+Systems on a Chip, or SOCs, are systems that have various hardware parts on one chip. Generally, these devices allow for connecting peripheral through a general purpose input/output bus, or GPIO. These devices are getting quite sophisticated and can run various software environments. For the purposes of this document, I will be discussing Raspberry Pi devices. A convenient feature of these devices is that they can run Unix-like operating systems, such a Linux. I have used Raspbian Bullseye in my development. 
+
+Because these devices can run Linux, it allows for flexible hardware and software configuration to perform a variety of tasks including management and control of devices through the use of sensors. With devices like Raspberry Pi 4 and Pi 5 the ability to build and scale IoT Gateway Applicaitons becomes a simpler task and with device sensor data unified in a singular format, these applications can decouple themselves from the physical aspect of data collection and device control. 
 
 Having a filesystem entity for sensor data fits with the Unix philosophy of "everything is a file".  This document intends to describe a system of doing this that is fairly portable across Unix-like systems.
 
