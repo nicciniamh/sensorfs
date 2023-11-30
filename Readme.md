@@ -18,7 +18,6 @@
     + [MQTT](#mqtt)
     + [RESTful API Server](#restful-api-server)
   * [Storage, Extraction and Presenting Temperature History](#storage--extraction-and-presenting-temperature-history)
-    + [Description](#description)
     + [Data Organizaion](#data-organizaion)
     + [View Relationships](#view-relationships)
   * [Code Assets](#code-assets)
@@ -252,10 +251,9 @@ Screenshot of Dashboard App
 
 <small>(and other stupid SQL tricks)</small>
 
-### Description
+This, while not specific to the concepts discussed above, illustrates a practical use of the data collected by my sensors. On my Pi4 I run a script, hourly, that collects temperature from a local sensor and two remote sensors for temperatures from three rooms in my home. This script, [histcollect.py](assets/histcollect.py), writes these data to an [SQLite3 database](assets/schema.sql). 
 
-For each devcice hosting data, each hour, data is collected to a database, one table per device.
-Each table has a similar structure. The difference is the temphist_pi4 data because it has a barometer. The other tables default pressure to zero. In this context we simply ignore it. See [code assets](assets/) for the sources used for this. 
+Each table has a similar structure. The difference is the temphist_pi4 data because it has a barometer. The other tables set pressure to zero. In this context we simply ignore it. The script [generate.sh](assets/generate.sh) is used to generate a comma separated file of the data in range, and two graphics showing each temperature. (One is for dark resources the other for light). 
 
 ### Data Organizaion
 
@@ -313,19 +311,23 @@ Example history graph
 
 ## Code Assets
 
-* [aggsens.py](assets/aggsens.md) - Example of Virtual Sensor combinding values from two sensors and averaging common data
-* [cpuinfo.py](asstes/cpuinfo.py) - A virtual sensor with cpu information from psutil
-* [dataToFs.py](assets/dataToFs.md) - Export a dict by property to path
-* [generate.sh](assets/generate.sh) - generate.sh
-* [histcollect.py](assets/histcollect.py) - histcollect
-* [histread.py](assets/histread.py) - histread.py
-* [i2cdev.py](assets/i2cdev.md) -  Example of hardware sensors accessed through Linux sysfs
-* [RGB (I/O) Sensor](assets/rgbsen.md) - Example of I/O sensor
-* [response.json](assets/responsejson.md) - response.json
-* [runtemphist.sh](assets/runtemphist.sh) - runtemphist.sh
-* [schema.sql](assets/schema.sql) - schema.sql
-* [sencollect.py](assets/sencollect.py) - Example Collector
-* [sensor.py](assets/sensor.py) - Base class for Sensors
+* [Base class for sensors](assets/sensor.py)
+  * [Example of Virtual Sensor combining values from two sensors and averaging common data.](assets/aggsens.md)
+  * [Example of hardware sensors accessed through Linux sysfs](assets/i2cdev.md)
+  * [Virtual CPU information sensor](assets/cpuinfo.py)
+  * [Example of I/O sensor](assets/rgbsen.md)
+* [Export a dict by property to file system tree](assets/dataToFs.md)
+* [Example response.json](assets/responsejson.md)
+* [REST API Server](assets/restapi.py)
+* [Data base schema](assets/schema.sql)
+* [Python Collector](assets/sencollect.py)
+* [Collector Config](assets/collectconf.py)
+* [Export dictionary to /sensor/*host/sensortype/members*](assets/senfs.md)
+* [Collect temperature history](assets/histcollect.py)
+  * [Generate history data and graphs](assets/generate.sh)
+  * [Part of the tool to generate history data](assets/runtemphist.sh)
+  * [Part of the tool to generate history data](assets/histread.py)
+
 
 #### Figures
 

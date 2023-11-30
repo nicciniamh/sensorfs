@@ -1,18 +1,17 @@
 # Code Assets
-|File|Purpose|
-|---|---|
-|[aggsens.md](aggsens.md)|Example of Virtual Sensor combinding values from two sensors and averaging common data|
-|[dataToFs.py](sen2fs.md)|Export a dict by property to path|
-|[generate.sh](generate.sh)|generate.sh|
-|[histcollect.py](histcollect.py)|History Collection Script|
-|[histread.py](histread.py)|Read history tables and generate graphs. |
-|[i2cdev.md](i2cdev.md)| Example of hardware sensors accessed through Linux sysfs|
-|[rgbsen.py](rgbsen.md)|Example of I/O sensor|
-|[responsejson.md](responsejson.md)|response.json|
-|[restapi.py](restapi.py)|REST API Server|
-|[runtemphist.sh](runtemphist.sh)|BASH script to generate graphs and put things where I want 'em|
-|[schema.sql](schema.sql)|Sqlite3 tables schema |
-|[senfs.py](senfs.md)|Export data to /sensor fs
-|[sencollect.py](sencollect.py)|Example Collector|
-|[collectconf.py](collectconf.py)|Collector configuration|
-|[sensor.py](sensor.py)|Base class for Sensors|
+* [Base class for sensors](sensor.py)
+  * [Example of Virtual Sensor combining values from two sensors and averaging common data.](aggsens.md)
+  * [Example of hardware sensors accessed through Linux sysfs. ](i2cdev.md)
+  * [Virtual CPU information sensor](cpuinfo.py)
+  * [Example of I/O sensor](rgbsen.md)
+* [Export a dict by property to file system tree](dataToFs.md)
+* [Example response.json](responsejson.md)
+* [REST API Server](restapi.py)
+* [Data base schema](schema.sql)
+* [Python Collector](sencollect.py)
+* [Collector Config](collectconf.py)
+* [Export dictionary to /sensor/*host/sensortype/members*](senfs.md)
+* [Collect temperature history](histcollect.py)
+  * [Generate history data and graphs](generate.sh)
+  * [Part of the tool to generate history data](runtemphist.sh)
+  * [Part of the tool to generate history data](histread.py)
