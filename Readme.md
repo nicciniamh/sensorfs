@@ -22,6 +22,7 @@
     + [Data Organizaion](#data-organizaion)
     + [View Relationships](#view-relationships)
   * [Code Assets](#code-assets)
+  * [Figures](#figures)
   * [Notes on Environment](#notes-on-environment)
   * [Trademarks, Copyrights and other Ownerships](#trademarks--copyrights-and-other-ownerships)
 
