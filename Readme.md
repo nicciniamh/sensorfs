@@ -67,7 +67,7 @@ There can be a variety of sensors to interface with any number of data sources.
 
 #### Virtual Sensors
 
-[Virtual Sensors](assets/aggsens.md) are sensors that take sensor data, massage it and export it to sensorfs. For example, temperature sensors to control HVAC systems. Instead of using a single data point, temperatures can be averaged and represented as a single point. 
+[Virtual Sensors](assets/aggsens.md) are sensors that take sensor data, massage it and export it to SensorFS. For example, temperature sensors to control HVAC systems. Instead of using a single data point, temperatures can be averaged and represented as a single point. 
 
 Information specific to a system, event, or other package of information can be expressed as "sensor" data. Examples of this are
 
@@ -120,16 +120,16 @@ Collectors are programs which collect sensor data from hardware and write to the
 
 [Collectors](assets/sencollect.py) can also read files on that filesystem, use of the modification time can represent new data for example. That data can be used to control a device. 
 
-In my setup I have three Raspberry Pi devices each with a temperature sensor of sometype. Each of these devices writes their data to their own sensorfs. The sensor filesystems from two devices are mounted on a master device which can instantiate a sensor using those files. I also have a sensor, for example, that parses Open Weather Map data to provide a "weather sensor". 
+In my setup I have three Raspberry Pi devices each with a temperature sensor of sometype. Each of these devices writes their data to their own SensorFS. The sensor filesystems from two devices are mounted on a master device which can instantiate a sensor using those files. I also have a sensor, for example, that parses Open Weather Map data to provide a "weather sensor". 
 
 ## Storage Organization
 To accomodate sharing sensor data with other hosts, each host, including the local host, a path on the root. Sensor data will be written to a class directory which contains the items for that sensor. The format is ```/sensor/host/class/item(s)```.
 
 ### Running Example
 
-Currently, I have three Raspberry Pi devices. One, a Pi 3B+ and the hub, a Pi 4B+ and a Pi Zero W. Each have sensors on their i2c bus and export their data to a sensorfs orgnized ramdisk, which gets mounted on the pi4.
+Currently, I have three Raspberry Pi devices. One, a Pi 3B+ and the hub, a Pi 4B+ and a Pi Zero W. Each have sensors on their i2c bus and export their data to a SensorFS orgnized ramdisk, which gets mounted on the pi4.
 
-On the Pi's, the data local sensor data is written to /sensor/host/sensor, for pi3 and piz these paths are mounted on the local sensorfs.
+On the Pi's, the data local sensor data is written to /sensor/host/sensor, for pi3 and piz these paths are mounted on the local SensorFS.
 
 My /sensor filesystem looks like:
 
