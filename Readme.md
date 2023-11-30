@@ -11,7 +11,7 @@
     + [Data Collection and Export](#data-collection-and-export)
     + [Storing Sensor Data on Filesystems](#storing-sensor-data-on-filesystems)
     + [Limitations](#limitations)
-    + [Collectors](#collectors)
+  * [Collectors](#collectors)
   * [Storage Organization](#storage-organization)
     + [Running Example](#running-example)
   * [Remote Usage](#remote-usage)
