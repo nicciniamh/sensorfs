@@ -323,7 +323,8 @@ Example history graph
 * [Python Collector](assets/sencollect.py)
 * [Collector Config](assets/collectconf.py)
 * [Export dictionary to /sensor/*host/sensortype/members*](assets/senfs.md)
-* [Collect temperature history](assets/histcollect.py)
+Tools used to collect and generate history
+* * [Collect temperature history](assets/histcollect.py)
   * [Generate history data and graphs](assets/generate.sh)
   * [runtemphist.sh - Part of the tool to generate history data](assets/runtemphist.sh)
   * [histread.sh - Part of the tool to generate history data](assets/histread.py)
