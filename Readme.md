@@ -1,5 +1,35 @@
 # Collection, Storage and Distribution of Sensor Data for Local and Remote Applications
 
+## Contents
+  * [Abstract](#abstract)
+      - [Why a file system?](#why-a-file-system-)
+    + [Audience](#audience)
+    + [Terms used](#terms-used)
+  * [Sensors](#sensors)
+    + [Sensor types](#sensor-types)
+      - [Virtual Sensors](#virtual-sensors)
+    + [Data Collection and Export](#data-collection-and-export)
+    + [Storing Sensor Data on Filesystems](#storing-sensor-data-on-filesystems)
+    + [Limitations](#limitations)
+    + [Collectors](#collectors)
+  * [Storage Organization](#storage-organization)
+    + [Running Example](#running-example)
+  * [Remote Usage](#remote-usage)
+    + [MQTT](#mqtt)
+    + [RESTful API Server](#restful-api-server)
+      - [Figure 1](#figure-1)
+  * [Storage, Extraction and Presenting Temperature History](#storage--extraction-and-presenting-temperature-history)
+    + [Description](#description)
+    + [Data Organizaion](#data-organizaion)
+      - [Figure 2](#figure-2)
+    + [View Relationships](#view-relationships)
+      - [Figure 3](#figure-3)
+      - [Figure 4](#figure-4)
+  * [Code Assets](#code-assets)
+      - [Figures](#figures)
+  * [Notes on Environment](#notes-on-environment)
+  * [Trademarks, Copyrights and other Ownerships](#trademarks--copyrights-and-other-ownerships)
+
 ## Abstract
 
 Modern SOC systems such as Raspberry Pi run Linux and other Unix-like Operating systems. This allows for flexible hardware and software configuration to perform a variety of tasks including management and control of devices through the use of sensors. With devices like Raspberry Pi 4 and Pi 5 the ability to build and scale IoT Gateway Applicaitons becomes a simpler task and with device sensor data unified in a singular format, these applications can decouple themselves from the physical aspect of data collection and device control. 
@@ -11,26 +41,6 @@ This scheme intends to discuss a method along with code to export sensor data fr
 #### Why a file system? 
 File system and file system like objects are the most portable way of storing data on a local system. For most applications, this data can be shared using regular file sharing technologies. Using in-memory file systems there is no storage fatigue involved.
 
-
-
-## Contents
-
-* [Intended Audience](#Audience)
-* [Terms used](#Terms-used)
-* [Sensors](#Sensors)
-  * [Sensor types](#Sensor-types)
-  * [Virtual Sensors](#Virtual-Sensors)
-  * [Data Collection and Export](#Data-Collection-and-Export)
-  * [Storing Sensor Data on Filesystems](#Storing-Sensor-Data-on-Filesystems)
-* [Collectors](#Collectors)
-* [Storage Organization](#Storage-Organization)
-* [Remote Usage](#Remote-Usage)
-  * [MQTT](#MQTT)
-  * [RESTful API Server](#RESTful-API-Server)
-* [Storage, Extraction and Presenting Temperature History](#Storage-Extraction-and-Presenting-Temperature-History)
-  * [Data Organizaion](#Data-Organizaion)
-* [Code Assets](#Code-Assets)
-* [Figure Listing](#figures)
 
 ### Audience
 This is intended for people already familiar with coding, sensors, Linux and Raspberry Pi. Familiarity with the [Python](https://www.learnpython.org) programming language and [JSON](assets/responsejson.md) is helpful too. Be aware that
@@ -65,9 +75,9 @@ Information specific to a system, event, or other package of information can be 
 * System information, such as cpu load or other system monitoring data can be expressed as a virtual sensor. For eample, [cpuinfo.py](assets/cpuinfo.py) provides cpu load. This is how my [Dashboard App](#Figure-1) gets the cpu loads. 
 * Data from remote sources such as other sensors, weather, and others.
 
-By using a class heirachy sensors can be written to perform a variety tasks. Given a protocol and an interface this system could also control home automation, robotics, and more.
+By using a class heirachy sensors can be written, with a standard interface, to perform a variety tasks. Given a protocol and an interface this system could also control home automation, robotics, and more.
 
-The [code assets](assets/) have details and code about the components I'm using.
+The [code assets](assets/) have details and code as examples of  the system I'm using.
 
 ### Data Collection and Export
 
