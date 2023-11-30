@@ -325,8 +325,8 @@ Example history graph
 * [Export dictionary to /sensor/*host/sensortype/members*](assets/senfs.md)
 * [Collect temperature history](assets/histcollect.py)
   * [Generate history data and graphs](assets/generate.sh)
-  * [Part of the tool to generate history data](assets/runtemphist.sh)
-  * [Part of the tool to generate history data](assets/histread.py)
+  * [runtemphist.sh - Part of the tool to generate history data](assets/runtemphist.sh)
+  * [histread.sh - Part of the tool to generate history data](assets/histread.py)
 
 
 #### Figures
