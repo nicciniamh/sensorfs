@@ -313,6 +313,7 @@ Example history graph
 * [Export a dict by property to file system tree](assets/dataToFs.md)
 * [Example response.json](assets/responsejson.md)
 * [REST API Server](assets/restapi.py)
+  * [REST API Client](assets/httpsen.py)
 * [Data base schema](assets/schema.sql)
 * [Python Collector](assets/sencollect.py)
   * [Collector Config](assets/collectconf.py)
