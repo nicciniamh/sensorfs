@@ -17,7 +17,7 @@
     + [MQTT](#mqtt)
     + [RESTful API Server](#restful-api-server)
   * [Storage, Extraction and Presenting Temperature History](#storage--extraction-and-presenting-temperature-history)
-    + [Data Organizaion](#data-organizaion)
+    + [Data Organization](#data-organization)
     + [View Relationships](#view-relationships)
   * [Code Assets](#code-assets)
   * [Figures](#figures)
@@ -27,21 +27,20 @@
 
 Systems on a Chip, or SOCs, are systems that have various hardware parts on one chip. Generally, these devices allow for connecting peripheral through a general purpose input/output bus, or GPIO. These devices are getting quite sophisticated and can run various software environments. For the purposes of this document, I will be discussing Raspberry Pi devices. A convenient feature of these devices is that they can run Unix-like operating systems, such a Linux. I have used Raspbian Bullseye in my development. This is a 'spin' of Debuan Bullseye with enhancements from the Raspberry Pi devs.
 
-Because these devices can run Linux, it allows for flexible hardware and software configuration to perform a variety of tasks including management and control of devices through the use of sensors. With devices like Raspberry Pi 4 and Pi 5 the ability to build and scale IoT Gateway Applicaitons becomes a simpler task and with device sensor data unified in a singular format, these applications can decouple themselves from the physical aspect of data collection and device control. 
+Because these devices can run Linux, it allows for flexible hardware and software configuration to perform a variety of tasks including management and control of devices through the use of sensors. With devices like Raspberry Pi 4 and Pi 5 the ability to build and scale IoT Gateway Applications becomes a simpler task and with device sensor data unified in a singular format, these applications can decouple themselves from the physical aspect of data collection and device control. 
 
 Having a filesystem entity for sensor data fits with the Unix philosophy of "everything is a file".  This document intends to describe a system of doing this that is fairly portable across Unix-like systems. By using in-ram filesytesm (ramdisks) file system like objects are the most portable way of storing data on a local system. For most applications, this data can be shared using regular file sharing technologies.
-
 
 This scheme intends to discuss a method along with code to export sensor data from any number of sources to a ramdisk in a consistent, structured format. Because this data can come from network sources, this allows for structuring and representing that data. I'm using Python and [JSON](assets/responsejson.md) to collect and serialize data, however, nothing described is exclusive to these technologies; Any language and data format can be used. The focus is really on storage and transport.
 
 ### Audience
 This is intended for people already familiar with coding, sensors, Linux and Raspberry Pi. Familiarity with the [Python](https://www.learnpython.org) programming language and [JSON](assets/responsejson.md) is helpful too. 
 
-Be aware that while code is presented, this is not a code respository and some linked files are actually markdown files to better illustrate the code. Some of the code files presented are simplified from their prodution counterparts and are used for illustrative purpose. 
+Be aware that while code is presented, this is not a code repository and some linked files are actually markdown files to better illustrate the code. Some of the code files presented are simplified from their production counterparts and are used for illustrative purpose. 
 
 ### Terms used
 
-* SensorFS - A ramdisk filesystem. For consistency purposes we will use /sensor as the mountpoint.
+* SensorFS - A ramdisk filesystem. For consistency purposes we will use /sensor as the mount point.
 * Host - A local or remote host, used in examples without a domain name but there is nothing preventing from using fully qualified domain names. 
 * [JSON](assets/responsejson.md) - Javascript Object Notation. Despite the name. JSON is a language agnostic and portable method of representing structured data.
 
@@ -65,10 +64,10 @@ There can be a variety of sensors to interface with any number of data sources.
 Information specific to a system, event, or other package of information can be expressed as "sensor" data. Examples of this are
 
 * In some cases it's valuable to aggregate sensor data as one dataset. An example of this is my [aggregate](assets/aggsens.md) sensor, a virtual sensor which averages two sensors as one.
-* System information, such as cpu load or other system monitoring data can be expressed as a virtual sensor. For eample, [cpuinfo.py](assets/cpuinfo.py) provides cpu load. This is how my [Dashboard App](#Figure-1) gets the cpu loads. 
+* System information, such as cpu load or other system monitoring data can be expressed as a virtual sensor. For example, [cpuinfo.py](assets/cpuinfo.py) provides cpu load. This is how my [Dashboard App](#Figure-1) gets the cpu loads. 
 * Data from remote sources such as other sensors, weather, and others.
 
-By using a class heirachy sensors can be written, with a standard interface, to perform a variety tasks. Given a protocol and an interface this system could also control home automation, robotics, and more.
+By using a class hierarchy sensors can be written, with a standard interface, to perform a variety tasks. Given a protocol and an interface this system could also control home automation, robotics, and more.
 
 The [code assets](assets/) have details and code as examples of  the system I'm using.
 
@@ -113,14 +112,14 @@ Collectors are programs which collect sensor data from hardware and write to the
 
 [Collectors](assets/sencollect.py) can also read files on that filesystem, use of the modification time can represent new data for example. That data can be used to control a device. 
 
-In my setup I have three Raspberry Pi devices each with a temperature sensor of sometype. Each of these devices writes their data to their own SensorFS. The sensor filesystems from two devices are mounted on a master device which can instantiate a sensor using those files. I also have a sensor, for example, that parses Open Weather Map data to provide a "weather sensor". 
+In my setup I have three Raspberry Pi devices each with a temperature sensor of some type. Each of these devices writes their data to their own SensorFS. The sensor filesystems from two devices are mounted on a master device which can instantiate a sensor using those files. I also have a sensor, for example, that parses Open Weather Map data to provide a "weather sensor". 
 
 ## Storage Organization
 To accomodate sharing sensor data with other hosts, each host, including the local host, a path on the root. Sensor data will be written to a class directory which contains the items for that sensor. The format is ```/sensor/host/class/item(s)```.
 
 ### Running Example
 
-Currently, I have three Raspberry Pi devices. One, a Pi 3B+ and the hub, a Pi 4B+ and a Pi Zero W. Each have sensors on their i2c bus and export their data to a SensorFS orgnized ramdisk, which gets mounted on the pi4.
+Currently, I have three Raspberry Pi devices. One, a Pi 3B+ and the hub, a Pi 4B+ and a Pi Zero W. Each have sensors on their i2c bus and export their data to a SensorFS organized ramdisk, which gets mounted on the pi4.
 
 On the Pi's, the data local sensor data is written to /sensor/host/sensor, for pi3 and piz these paths are mounted on the local SensorFS.
 
@@ -189,10 +188,10 @@ This shows data for all three hosts (pi4, pi4 and piz). Each device runs a colle
 
 The entry for pi4, [aggregate](assets/aggsens.md), is a virtual sensor where three temperatures and two humidities are averaged and the barometric readings are all part of the "sensor's" data. 
 
-These processes take little, in terms of resources, and the network traffic is negligable. But if deployed well, can provide a robust method of data collection and exchange transparent to the higher level application with just a few cases where administrator rights are used. 
+These processes take little, in terms of resources, and the network traffic is negligible. But if deployed well, can provide a robust method of data collection and exchange transparent to the higher level application with just a few cases where administrator rights are used. 
 
 ## Remote Usage
-These sensor data my be transmitted to other devices or hosts using, for example, MQTT. This broked approach pushes data to the interested client. 
+These sensor data my be transmitted to other devices or hosts using, for example, MQTT. This brokered approach pushes data to the interested client. 
 
 ### MQTT
 Because sensor data is stored, in part, as JSON data, which is also the return format from Sensor derived sensors, it is quite suitable for MQTT. In this case, the data would be published to the broker with a topic 
@@ -210,7 +209,7 @@ API usage is made with a HTTP request with the form of
 
 The return value may be parsed as JSON to get native types. 
 
-|command|Description|Parametera|Return type|
+|command|Description                           |Parameters        |Return type|
 |------|---------------------------------------|------------------|-----------|
 |hosts |List of hosts whose data is available  |None              |array      |
 |list  |List sensors for a specific host       |host              |array      |
@@ -219,7 +218,7 @@ The return value may be parsed as JSON to get native types.
 
 
 Using this lightweight server I am able to construct web pages or applications. For example, 
-I have a dashboard app I wrote, primarily, in Javascript, that displays a number of sensors on a page per host, covering three Rasperry Pi. On this dashboard app I use information pulled from the Python module, psutil, to get CPU load, usage, per core usage, memory, boot time, and cpu temperature for that particular device. 
+I have a dashboard app I wrote, primarily, in Javascript, that displays a number of sensors on a page per host, covering three Raspberry Pi. On this dashboard app I use information pulled from the Python module, psutil, to get CPU load, usage, per core usage, memory, boot time, and cpu temperature for that particular device. 
 
 For a pi3 or pi4 the data that is returned looks like:
 
@@ -250,7 +249,7 @@ This, while not specific to the concepts discussed above, illustrates a practica
 
 Each table has a similar structure. The difference is the temphist_pi4 data because it has a barometer. The other tables set pressure to zero. In this context we simply ignore it. The script [generate.sh](assets/generate.sh) is used to generate a comma separated file of the data in range, and two graphics showing each temperature. (One is for dark resources the other for light). 
 
-### Data Organizaion
+### Data Organization
 
 #### Figure 2
 Database Tables
@@ -316,8 +315,8 @@ Example history graph
 * [REST API Server](assets/restapi.py)
 * [Data base schema](assets/schema.sql)
 * [Python Collector](assets/sencollect.py)
-* [Collector Config](assets/collectconf.py)
-* [Export dictionary to /sensor/*host/sensortype/members*](assets/senfs.md)
+  * [Collector Config](assets/collectconf.py)
+  * [Export dictionary to /sensor/*host/sensortype/members*](assets/senfs.md)
 
 Tools used to collect and generate history
   * [Collect temperature history](assets/histcollect.py)
@@ -344,7 +343,7 @@ This document, images and other content are Copyright &copy; 2023 Nicole Stevens
 
 * MacBook Pro is a registered trademark of [Apple Computer, Inc.](https://www.apple.com)
 * Raspbian and Raspberry Pi is a trademark of [Raspberry Pi Ltd.](https://raspberrypi.com)
-* Debian is a registred trademark by [Software in the Public Interest, Inc.](https://www.debian.org)
+* Debian is a registered trademark by [Software in the Public Interest, Inc.](https://www.debian.org)
 * Python is Copyright &copy; 2001-2023. [Python Software Foundation.](http://www.python.org)
 * MacDown is Copyright &copy; 2014–2016 Tzu-ping Chung.
 * Sublime Text is Copyright &copy; [Sublime HQ Pty, Ltd.](https://www.sublimehq.com/)
