@@ -21,7 +21,7 @@
     + [View Relationships](#view-relationships)
   * [Code Assets](#code-assets)
   * [Figures](#figures)
-  * [Trademarks, Copyrights and other Ownerships](#trademarks--copyrights-and-other-ownerships)
+  * [Trademarks, Copyrights and other Ownerships](#trademarks-copyrights-and-other-ownerships)
 
 ## Abstract
 
