@@ -342,7 +342,7 @@ This was built on a Raspberry Pi4+ B running *Raspbian Buster*, a MacBook Pro, *
 
 This document, images and other content are Copyright &copy; 2023 Nicole Stevens. Except where otherwise noted. This document is licensed under [CC-BY (Creative Commons)](LICENSE). The country of publication of this document is United States of America.
 
-* MacBook Pro is a registered trademark of [Apple Computer, Inc.](www.apple.com)
+* MacBook Pro is a registered trademark of [Apple Computer, Inc.](https://www.apple.com)
 * Raspbian and Raspberry Pi is a trademark of [Raspberry Pi Ltd.](https://raspberrypi.com)
 * Debian is a registred trademark by [Software in the Public Interest, Inc.](https://www.debian.org)
 * Python is Copyright &copy; 2001-2023. [Python Software Foundation.](http://www.python.org)
