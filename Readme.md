@@ -21,7 +21,6 @@
     + [View Relationships](#view-relationships)
   * [Code Assets](#code-assets)
   * [Figures](#figures)
-  * [Notes on Environment](#notes-on-environment)
   * [Trademarks, Copyrights and other Ownerships](#trademarks--copyrights-and-other-ownerships)
 
 ## Abstract
@@ -337,12 +336,13 @@ Tools used to collect and generate history
 
 
 ### Notes on Environment
-This was built on a Raspberry Pi4+ B running *Raspbian Buster*, *Sqlite3 3.34.1*, and *Python 3.9*. These documents were build using Sublime Text, *MacDown Markdown Editor*, and *draw.io diagram editor*. 
+This was built on a Raspberry Pi4+ B running *Raspbian Buster*, a MacBook Pro, *Sqlite3 3.34.1*, and *Python 3.9*. These documents were build using Sublime Text, *MacDown Markdown Editor*, and *draw.io diagram editor*. 
 
 ## Trademarks, Copyrights and other Ownerships
 
 This document, images and other content are Copyright &copy; 2023 Nicole Stevens. Except where otherwise noted. This document is licensed under [CC-BY (Creative Commons)](LICENSE). The country of publication of this document is United States of America.
 
+* MacBook Pro is a registered trademark of [Apple Computer, Inc.](www.apple.com)
 * Raspbian and Raspberry Pi is a trademark of [Raspberry Pi Ltd.](https://raspberrypi.com)
 * Debian is a registred trademark by [Software in the Public Interest, Inc.](https://www.debian.org)
 * Python is Copyright &copy; 2001-2023. [Python Software Foundation.](http://www.python.org)
