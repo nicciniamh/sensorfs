@@ -16,7 +16,7 @@
   * [Remote Usage](#remote-usage)
     + [MQTT](#mqtt)
     + [RESTful API Server](#restful-api-server)
-  * [Storage, Extraction and Presenting Temperature History](#storage--extraction-and-presenting-temperature-history)
+  * [Storage, Extraction and Presenting Temperature History](#storage-extraction-and-presenting-temperature-history)
     + [Data Organization](#data-organization)
     + [View Relationships](#view-relationships)
   * [Code Assets](#code-assets)
