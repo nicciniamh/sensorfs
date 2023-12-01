@@ -57,7 +57,9 @@ There can be a variety of sensors to interface with any number of data sources.
 * [Hardware sensors](assets/i2cdev.md) by either directly manipulating hardware or through kernel interfaces.
 * [Virtual Sensors](#Virtual-Sensors) which can do things like amalgamate other sensor data or perform calculations on one or more sensors to produce new data or represent any set of structured data..
 * Remote sensors are a type of virtual sensor in that there is no physical device to read and the data is collected elsewhere. 
-* I/O Sensors where data can be supplied to a device to perform an operation. My example I/O sensor, [rgbsen.py](assets/rgbsen.md), controls an RGB LED. 
+* I/O Sensors where data can be supplied to a device to perform an operation. My example I/O sensor, [rgbsen.py](assets/rgbsen.md), controls an RGB LED.
+
+The latter is very simplisic but it does show a method of providing a command interface to a write sensor.  
 
 #### Virtual Sensors
 
