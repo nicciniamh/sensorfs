@@ -2,7 +2,6 @@
 
 ## Contents
   * [Abstract](#abstract)
-      - [Why a file system?](#why-a-file-system-)
     + [Audience](#audience)
     + [Terms used](#terms-used)
   * [Sensors](#sensors)
@@ -31,13 +30,10 @@ Systems on a Chip, or SOCs, are systems that have various hardware parts on one 
 
 Because these devices can run Linux, it allows for flexible hardware and software configuration to perform a variety of tasks including management and control of devices through the use of sensors. With devices like Raspberry Pi 4 and Pi 5 the ability to build and scale IoT Gateway Applicaitons becomes a simpler task and with device sensor data unified in a singular format, these applications can decouple themselves from the physical aspect of data collection and device control. 
 
-Having a filesystem entity for sensor data fits with the Unix philosophy of "everything is a file".  This document intends to describe a system of doing this that is fairly portable across Unix-like systems.
+Having a filesystem entity for sensor data fits with the Unix philosophy of "everything is a file".  This document intends to describe a system of doing this that is fairly portable across Unix-like systems. By using in-ram filesytesm (ramdisks) file system like objects are the most portable way of storing data on a local system. For most applications, this data can be shared using regular file sharing technologies.
+
 
 This scheme intends to discuss a method along with code to export sensor data from any number of sources to a ramdisk in a consistent, structured format. Because this data can come from network sources, this allows for structuring and representing that data. I'm using Python and [JSON](assets/responsejson.md) to collect and serialize data, however, nothing described is exclusive to these technologies; Any language and data format can be used. The focus is really on storage and transport.
-
-#### Why a file system? 
-File system and file system like objects are the most portable way of storing data on a local system. For most applications, this data can be shared using regular file sharing technologies. Using in-memory file systems there is no storage fatigue involved.
-
 
 ### Audience
 This is intended for people already familiar with coding, sensors, Linux and Raspberry Pi. Familiarity with the [Python](https://www.learnpython.org) programming language and [JSON](assets/responsejson.md) is helpful too. 
