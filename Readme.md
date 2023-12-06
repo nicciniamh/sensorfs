@@ -16,6 +16,7 @@
   * [Remote Usage](#remote-usage)
     + [MQTT](#mqtt)
     + [RESTful API Server](#restful-api-server)
+  * [Check Sensor Health](#health-checking)
   * [Storage, Extraction and Presenting Temperature History](#storage-extraction-and-presenting-temperature-history)
     + [Data Organization](#data-organization)
     + [View Relationships](#view-relationships)
@@ -245,6 +246,10 @@ Screenshot of Dashboard App
 
 ![](assets/dashboard.png)
 
+## Health Checking
+Sensors and network connections can fail and sometimes those failures may be transient but some require intervention. For example, a power outage on a device may render it unreadable, or a sensor may be damaged. These failures shouldn't stop the process of collecting data for other sensors. Nevertheless the system operator should be notified of these failures for further action to be taken. This is where my [health check](assets/healthcheck.py) script comes into play. This script is run, every five minutes, via cron(8). When a failure is noted, it's logged to a file, and mail is sent to the operator. 
+
+
 ## Storage, Extraction and Presenting Temperature History 
 
 <small>(and other stupid SQL tricks)</small>
@@ -322,6 +327,7 @@ Example history graph
 * [Python Collector](assets/sencollect.py)
   * [Collector Config](assets/collectconf.py)
   * [Export dictionary to /sensor/*host/sensortype/members*](assets/senfs.md)
+* [Check sensor health](assets/healthcheck.py)
 
 Tools used to collect and generate history
   * [Collect temperature history](assets/histcollect.py)

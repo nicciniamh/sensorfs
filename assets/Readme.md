@@ -13,6 +13,7 @@
 * [Python Collector](sencollect.py)
 * [Collector Config](collectconf.py)
 * [Export dictionary to /sensor/*host/sensortype/members*](senfs.md)
+* [Check sensor health](healthcheck.py)
 
 Tools used to collect and generate history
   * [Collect temperature history](histcollect.py)
