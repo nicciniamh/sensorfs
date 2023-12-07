@@ -1,9 +1,20 @@
-  #!/usr/bin/env python3
+#!/usr/bin/env python3
 #
-# Check the health of sensors making sure the files that should be there
-# are there and that they are not stale. (modification time was greater than max_age
-# seconds ago.
+# healthceck reads the file ~/etc/healthchecklist.txt, each line is a pathnamne to
+# sensorfs sensor entity - each of these directories should have an entry called time.
+# Since this is a consistent entry for any sensor it used to determine freshness of data.
 #
+# For each path in the list the file modification time is checked against current time
+# and if the difference is greater than maxAge it is reported as stale. If the path
+# doesn't exist or is unreadable it is reported as missing.
+#
+# When errors are found they are written to an error file ~/.healthcheckerrors.
+# If there was no error file when healthcheck runs an email is sent to errora_to.
+# If the file already existed, further emails aren't sent.
+#
+# If there are no errors and the error file exists (i.e., any errors are cleared)
+# the error file is removed.
+
 import os
 import glob
 import time
@@ -14,58 +25,49 @@ maxAge = 180
 
 error = []
 
-errors_to = "nicci"
-homepath = os.path.expanduser('~')
-logfile = f'{homepath}/.local/logs/healthcheck.log'
-efile = f'{homepath}/.healthcheck.errors'
+errors_to = "phonenumber@cellprovider.tld"
+logfile = "/home/user/.local/logs/healthcheck.log"
+efile = f'/home/user/.healthcheck.errors'
 
 
-def sendErrorEmail(subject,file):
-	global errors_to
-	mailcmd = f'/usr/bin/mail -s "{subject}" {errors_to} <{file} '
-	os.system(mailcmd)
-	
-
-if os.path.exists(efile):
-	sys.exit(1)
+def sendErrors(errors_to,error):
+	mailcmd = f'/usr/bin/msmtp -f senhealth@ducksfeet.com {errors_to}'
+	with os.popen(mailcmd,'w') as p:
+		#print(f'Sending to {errors_to}: [{error}]')
+		p.write(f'\n\n{error}\n')
+	return True
 
 with open(logfile,"a") as log:
-	tcnt = 0
 	ecnt = 0
-	with open(f'{homepath}/etc/hchecklist.txt') as f:
-		files = f.read().strip().split('\n')
-	for f in files:
-		try:
-			age = now - os.stat(f).st_mtime
-			if age > maxAge:
-				tcnt = tcnt + 1
-				tmsg = f'{f}:{age} seconds'
-				error.append(tmsg)
-				print(tmsg,file=log)
-			else:
-				tfile = os.path.join(os.path.dirname(f),'time')
-				if os.path.exists(tfile):
-					try:
-						addtl = ''
-						then = int(open(tfile).read().strip())
-					except:
-						addtl = ':timestamp file did not have integer in it either.'
-						then = int(os.stat(tfile).st_mtime);
-					if (now - then) > maxAge:
-						tmsg = f'{f}: timstamp file too old{addtl}'
-						error.append(tmsg)
-						print(tmsg,file=log)
-
-		except Exception as e:
-			ecnt = ecnt + 1
-			emsg = f'Error {e} with {f}'
+	now = time.time()
+	with open('/home/user/etc/hchecklist.txt') as f:
+		paths = f.read().strip().split('\n')
+	for p in paths:
+		sensor = os.path.basename(p)
+		host = os.path.basename(os.path.dirname(p))
+		sen = f'{host}/{sensor}'
+		emsg = ''
+		check = os.path.join(p,'time')
+		if not os.path.exists(check):
+			emsg = f'{sen}: missing'
+			print(emsg,file=log)
 			error.append(emsg)
-			print(f,emsg,file=log)
+			ecnt = ecnt + 1
+			continue
+
+		age = now - os.stat(check).st_mtime
+		if age > maxAge:
+			ecnt = ecnt + 1
+			emsg = f'{sen}: stale data'
+			error.append(emsg)
 
 if len(error):
-	with open(efile,'w') as f:
-		f.write('\n'.join(error))
-#		sendErrorEmail("Health Check Errors",efile)
+	errors = '\n'.join(error)
+	error = f'{ecnt} error(s): {errors}'
+	if not os.path.exists(efile):
+		sendErrors(errors_to,error)
+	with open(efile,'a') as f:
+		f.write(error)
 else:
 	if os.path.exists(efile):
 		os.unlink(efile)
@@ -73,5 +75,5 @@ else:
 with open('/tmp/healthcheck.ran','w') as f:
 	print('Ok',file=f)
 
-sys.exit(tcnt+ecnt)
+sys.exit(ecnt)
 

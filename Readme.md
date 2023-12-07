@@ -247,9 +247,10 @@ Screenshot of Dashboard App
 ![](assets/dashboard.png)
 
 ## Health Checking
+
 Sensors and network connections can fail and sometimes those failures may be transient but some require intervention. For example, a power outage on a device may render it unreadable, or a sensor may be damaged. These failures shouldn't stop the process of collecting data for other sensors. Nevertheless the system operator should be notified of these failures for further action to be taken. This is where my [health check](assets/healthcheck.py) script comes into play. This script is run, every five minutes, via cron(8). When a failure is noted, it's logged to a file, and mail is sent to the operator. 
 
-Although not in the sample code, the errors_to variable can be set to a mobile providers email-to-text gateway and send text messages in the event of failure. This, of course, reguires the ability to send mail via SMTP. 
+My script is set up so the errors_to variable is set to my cell phone provider's email-to-text gateway and send text messages in the event of failure.
  
 
 
