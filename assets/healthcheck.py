@@ -1,20 +1,20 @@
 #!/usr/bin/env python3
-#
-# healthceck reads the file ~/etc/healthchecklist.txt, each line is a pathnamne to
-# sensorfs sensor entity - each of these directories should have an entry called time.
-# Since this is a consistent entry for any sensor it used to determine freshness of data.
-#
-# For each path in the list the file modification time is checked against current time
-# and if the difference is greater than maxAge it is reported as stale. If the path
-# doesn't exist or is unreadable it is reported as missing.
-#
-# When errors are found they are written to an error file ~/.healthcheckerrors.
-# If there was no error file when healthcheck runs an email is sent to errora_to.
-# If the file already existed, further emails aren't sent.
-#
-# If there are no errors and the error file exists (i.e., any errors are cleared)
-# the error file is removed.
+'''
+healthceck reads the file ~/etc/healthchecklist.txt, each line is a pathnamne to
+sensorfs sensor entity - each of these directories should have an entry called time.
+Since this is a consistent entry for any sensor it used to determine freshness of data.
 
+For each path in the list the file modification time is checked against current time
+and if the difference is greater than maxAge it is reported as stale. If the path
+doesn't exist or is unreadable it is reported as missing.
+
+When errors are found they are written to an error file ~/.healthcheckerrors.
+If there was no error file when healthcheck runs an email is sent to errora_to.
+If the file already existed, further emails aren't sent.
+
+If there are no errors and the error file exists (i.e., any errors are cleared)
+the error file is removed.
+'''
 import os
 import glob
 import time
