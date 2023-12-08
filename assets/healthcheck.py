@@ -31,7 +31,7 @@ efile = f'/home/user/.healthcheck.errors'
 
 
 def sendErrors(errors_to,error):
-	mailcmd = f'/usr/bin/msmtp -f senhealth@ducksfeet.com {errors_to}'
+	mailcmd = f'/sbin/sendmail -f senhealth@ducksfeet.com {errors_to}'
 	with os.popen(mailcmd,'w') as p:
 		#print(f'Sending to {errors_to}: [{error}]')
 		p.write(f'\n\n{error}\n')
