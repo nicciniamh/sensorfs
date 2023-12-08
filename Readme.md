@@ -51,6 +51,8 @@ Be aware that while code is presented, this is not a code repository and some li
 
 For this system I use Python to create interfaces to sensors, virtual sensors, system information and other information that can be read using the same interface. Sensors are derived from a base class of [Sensor](assets/sensor.py) and the data is read and/or written to using [JSON](assets/responsejson.md).
 
+The classes and sensors described here do not manipulate the sensor hardware directly (with the exception of rgbsen) and rely on kernel and system interfaces to access sensor data and in a consistent format.
+
 ### Sensor types
 
 There can be a variety of sensors to interface with any number of data sources. 
