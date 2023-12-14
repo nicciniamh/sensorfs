@@ -1,5 +1,7 @@
 # Collection, Storage and Distribution of Sensor Data for Local and Remote Applications
 
+![](assets/topmatter.gif)
+
 ## Contents
   * [Abstract](#abstract)
     + [Audience](#audience)
