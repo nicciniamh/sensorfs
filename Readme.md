@@ -80,7 +80,7 @@ The [code assets](assets/) have details and code as examples of  the system I'm 
 
 ### Data Collection and Export
 
-In [dataToFs.py](assets/dataToFs.md) a dictionary is recursed and each key/value pair is 
+In [sen2Fs.py](assets/sen2Fs.md) a dictionary is recursed and each key/value pair is 
 turned into a number of files in a base path. For a sensor that has temperature, humidity and pressure, called "aggregate" there will be a directory containing
 
 ```
@@ -108,6 +108,11 @@ tmpfs /sensor	tmpfs nosuid,noexec,nodev,noatime,uid=1000,gid=1000,size=5M 0 0
 ```
 
 This creates a 5M ramdisk owned by uid/gid 1000,1000 (the first login user created on Debian systems as owner. This is our SensorFS.
+
+### Data Usage
+One of the reasons to export this data to a filesytem is to allow for multiple processes to 
+read the sensor data from SensorFS, rather than the device directly. This allows for the collector to manage timing and any other conditions that might arise with reading the sensor. This is where [senfs.py](assets/senfs.py) comes in. This allows a sensor object ot be created from those filesystem entiries. 
+
 
 ### Limitations
 Often sensors are used for controlling other devices and need a fine degree of timing. In cases like this it's likely better to work with the physical device. 
@@ -202,7 +207,7 @@ These sensor data my be transmitted to other devices or hosts using, for example
 
 ### MQTT
 Because sensor data is stored, in part, as JSON data, which is also the return format from Sensor derived sensors, it is quite suitable for MQTT. In this case, the data would be published to the broker with a topic 
-of /sensor/host/sensorname and a payload of the JSON from that sensor. For a subscriber, the data can be read, and, in this context, [dataToFs.py](assets/dataToFs.md) would be called to export the data to the filesystem. 
+of /sensor/host/sensorname and a payload of the JSON from that sensor. For a subscriber, the data can be read, and, in this context, [sen2fs.py](assets/sen2fs.md) would be called to export the data to the filesystem. 
 
 ### RESTful API Server
 
@@ -325,14 +330,14 @@ Example history graph
   * [Example of hardware sensors accessed through Linux sysfs](assets/i2cdev.md)
   * [Virtual CPU information sensor](assets/cpuinfo.py)
   * [Example of I/O sensor](assets/rgbsen.md)
-* [Export a dict by property to file system tree](assets/dataToFs.md)
 * [Example response.json](assets/responsejson.md)
 * [REST API Server](assets/restapi.py)
   * [REST API Client](assets/httpsen.py)
 * [Data base schema](assets/schema.sql)
 * [Python Collector](assets/sencollect.py)
   * [Collector Config](assets/collectconf.py)
-  * [Export dictionary to /sensor/*host/sensortype/members*](assets/senfs.md)
+  * [Export dictionary to /sensor/*host/sensortype/members*](assets/sen2fs.py)
+  * [Use exported sensor data in sensorfs as sensor object](assets/senfs.py)
 * [Check sensor health](assets/healthcheck.py)
 
 Tools used to collect and generate history
