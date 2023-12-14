@@ -335,7 +335,7 @@ Example history graph
   * [REST API Client](assets/httpsen.py)
 * [Data base schema](assets/schema.sql)
 * [Python Collector](assets/sencollect.py)
-  * [Collector Config](assets/collectconf.py)
+  * [Collector Config](assets/collect.conf)
   * [Export dictionary to /sensor/*host/sensortype/members*](assets/sen2fs.py)
   * [Use exported sensor data in sensorfs as sensor object](assets/senfs.py)
 * [Check sensor health](assets/healthcheck.py)
