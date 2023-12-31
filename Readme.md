@@ -18,6 +18,7 @@
   * [Remote Usage](#remote-usage)
     + [MQTT](#mqtt)
     + [RESTful API Server](#restful-api-server)
+  * [HomeKit Integration](#HomeKit-Integration)
   * [Check Sensor Health](#health-checking)
   * [Storage, Extraction and Presenting Temperature History](#storage-extraction-and-presenting-temperature-history)
     + [Data Organization](#data-organization)
@@ -255,6 +256,9 @@ Screenshot of Dashboard App
 
 ![](assets/dashboard.png)
 
+## HomeKit Integration
+I have an iPhone and I ask it for a lot of information when it's not near me. By advertising these sensors as sensor accessories (right now, just tmperature and humidity) I can ask Siri for these values. To accomplish this I am using HAP-Python. See code assests for details. 
+
 ## Health Checking
 
 Sensors and network connections can fail and sometimes those failures may be transient but some require intervention. For example, a power outage on a device may render it unreadable, or a sensor may be damaged. These failures shouldn't stop the process of collecting data for other sensors. Nevertheless the system operator should be notified of these failures for further action to be taken. This is where my [health check](assets/healthcheck.py) script comes into play. This script is run, every five minutes, via cron(8). When a failure is noted, it's logged to a file, and mail is sent to the operator. 
@@ -347,6 +351,9 @@ Tools used to collect and generate history
   * [Generate history data and graphs](assets/generate.sh)
   * [runtemphist.sh - tool to generate history data](assets/runtemphist.sh)
   * [histread.sh - tool to generate graphs](assets/histread.py)
+
+ HomeKit Integration
+  * [hapservice.py](assets/hapservice.py)
 
 
 #### Figures
