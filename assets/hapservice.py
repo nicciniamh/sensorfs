@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+
+## Example HAP service for my sensors. Mostly taken from examples from HAP-Py
+
 import os
 import sys
 import time
