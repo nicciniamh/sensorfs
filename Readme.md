@@ -260,7 +260,7 @@ Screenshot of Dashboard App
 I have a Raspberry Pi 5 running Ubuntu which does not control the integrrated 
 CPU fan. I wrote a systemd service to control the fan. As an experiment I created a simple Python [AioHTTP](assets/fancontrol.py) server to control the fan using a [SensorFS Virtual Sensor](assets/cpufan.py) along with a (Node-Red)[https://nodered.org/] flow which controls the fan on my Pi 5 from my MacBook. 
 
-To see the flow in action, please viewe the [video of the flow](assets/fan-control.mp4)
+To see the flow in action, please viewe the [video of the flow](assets/node-fan-control.mp4)
 
 ## HomeKit Integration
 I have an iPhone and I ask it for a lot of information when it's not near me. By advertising these sensors as sensor accessories (right now, just tmperature and humidity) I can ask Siri for these values. To accomplish this I am using HAP-Python. See code assests for details. 
