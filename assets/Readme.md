@@ -6,7 +6,7 @@
   * [Virtual CPU information sensor](cpuinfo.py)
   * [Example of I/O sensor](rgbsen.md)
   * [Fan control sensor](cpufan.py)
-  * [Fan control Rest Server](fancontrol.py)
+  * [Fan control Rest Server](Fan Control API.md)
 
 * [Example response.json](responsejson.md)
 * [REST API Server](restapi.py)
