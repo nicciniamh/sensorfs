@@ -5,6 +5,9 @@
   * [Example of hardware sensors accessed through Linux sysfs](i2cdev.md)
   * [Virtual CPU information sensor](cpuinfo.py)
   * [Example of I/O sensor](rgbsen.md)
+  * [Fan control sensor](cpufan.py)
+  * [Fan control Rest Server](fancontrol.py)
+
 * [Example response.json](responsejson.md)
 * [REST API Server](restapi.py)
   * [REST API Client](httpsen.py)
