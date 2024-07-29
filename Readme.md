@@ -258,7 +258,7 @@ Screenshot of Dashboard App
 
 ## Dynamic Control of CPU Fan on Remote System
 I have a Raspberry Pi 5 running Ubuntu which does not control the integrrated 
-CPU fan. I wrote a systemd service to control the fan. As an experiment I created a simple Python [AioHTTP](assents/fancontrol.py) server to control the fan using a [SensorFS Virtual Sensor](assets/cpufan.py) along with a (Node-Red)[https://nodered.org/] flow which controls the fan on my Pi 5 from my MacBook. 
+CPU fan. I wrote a systemd service to control the fan. As an experiment I created a simple Python [AioHTTP](assets/fancontrol.py) server to control the fan using a [SensorFS Virtual Sensor](assets/cpufan.py) along with a (Node-Red)[https://nodered.org/] flow which controls the fan on my Pi 5 from my MacBook. 
 
 To see the flow in action, please viewe the [video of the flow](assets/fan-control.mp4)
 
