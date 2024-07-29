@@ -27,7 +27,7 @@ The fan control api presents two sensors, cpu_info and cpu_fan. These sensors ha
 
 The full dataset returned by reading cpu_fan is:
 
-```
+```json
 {
    "name" : "cpu_fan",
    "rpm" : 3040,
